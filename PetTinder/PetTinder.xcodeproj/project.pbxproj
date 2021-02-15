@@ -13,6 +13,8 @@
 		046FF49C25DAFF9200045951 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046FF49B25DAFF9200045951 /* Preview Assets.xcassets */; };
 		046FF4A725DAFF9300045951 /* PetTinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046FF4A625DAFF9300045951 /* PetTinderTests.swift */; };
 		046FF4B225DAFF9300045951 /* PetTinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046FF4B125DAFF9300045951 /* PetTinderUITests.swift */; };
+		046FF4C825DB384100045951 /* testComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046FF4C725DB384100045951 /* testComponent.swift */; };
+		046FF4CD25DB385500045951 /* testServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046FF4CC25DB385500045951 /* testServer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		046FF4AD25DAFF9300045951 /* PetTinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetTinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046FF4B125DAFF9300045951 /* PetTinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTinderUITests.swift; sourceTree = "<group>"; };
 		046FF4B325DAFF9300045951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046FF4C725DB384100045951 /* testComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testComponent.swift; sourceTree = "<group>"; };
+		046FF4CC25DB385500045951 /* testServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testServer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 		046FF4C425DB2B1E00045951 /* server */ = {
 			isa = PBXGroup;
 			children = (
+				046FF4CC25DB385500045951 /* testServer.swift */,
 			);
 			path = server;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 		046FF4C625DB2B5E00045951 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				046FF4C725DB384100045951 /* testComponent.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -285,6 +291,8 @@
 			files = (
 				046FF49725DAFF8F00045951 /* ContentView.swift in Sources */,
 				046FF49525DAFF8F00045951 /* PetTinderApp.swift in Sources */,
+				046FF4CD25DB385500045951 /* testServer.swift in Sources */,
+				046FF4C825DB384100045951 /* testComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
