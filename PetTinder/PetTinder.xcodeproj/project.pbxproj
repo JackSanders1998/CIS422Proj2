@@ -95,6 +95,8 @@
 		046FF49325DAFF8F00045951 /* PetTinder */ = {
 			isa = PBXGroup;
 			children = (
+				046FF4C525DB2B3600045951 /* client */,
+				046FF4C425DB2B1E00045951 /* server */,
 				046FF49425DAFF8F00045951 /* PetTinderApp.swift */,
 				046FF49625DAFF8F00045951 /* ContentView.swift */,
 				046FF49825DAFF9200045951 /* Assets.xcassets */,
@@ -128,6 +130,28 @@
 				046FF4B325DAFF9300045951 /* Info.plist */,
 			);
 			path = PetTinderUITests;
+			sourceTree = "<group>";
+		};
+		046FF4C425DB2B1E00045951 /* server */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
+		046FF4C525DB2B3600045951 /* client */ = {
+			isa = PBXGroup;
+			children = (
+				046FF4C625DB2B5E00045951 /* components */,
+			);
+			path = client;
+			sourceTree = "<group>";
+		};
+		046FF4C625DB2B5E00045951 /* components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
