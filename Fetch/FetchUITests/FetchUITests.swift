@@ -1,13 +1,13 @@
 //
-//  PetTinderUITests.swift
-//  PetTinderUITests
+//  FetchUITests.swift
+//  FetchUITests
 //
-//  Created by Jack Sanders on 2/15/21.
+//  Created by Jack Sanders on 2/18/21.
 //
 
 import XCTest
 
-class PetTinderUITests: XCTestCase {
+class FetchUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
