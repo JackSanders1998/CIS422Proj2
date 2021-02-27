@@ -18,24 +18,16 @@ struct SwiftUIView: View {
     @State private var password = ""
     
     
-    var customColor = Color(#colorLiteral(red: 0.4990266562, green: 0.1171680465, blue: 0.5748440027, alpha: 1))
     var body: some View {
-        let backgroundImage = Image("IMG_4788").contrast(0.6)
         VStack {
             NavigationView {
             VStack {
-                Text("Fetch!")
-                    .font(Font.custom("Georgia", size: 120.0, relativeTo: .headline))
-                    .italic()
-                    .foregroundColor(customColor)
-                    .padding(.bottom, 40)
-                    
                 HStack {
                     Text("UserName:").padding(.trailing, 20)
                     Image(systemName: "person.fill").foregroundColor(Color.black)
                     TextField("", text: self.$username).foregroundColor(.black)
                 }.padding()
-                 .background(Color.white)
+                 .background(Color.blue)
                  .cornerRadius(100)
                  .opacity(0.9)
                  .padding(.bottom, 15)
@@ -45,7 +37,7 @@ struct SwiftUIView: View {
                     Image(systemName: "lock.fill").foregroundColor(.black)
                     SecureField("", text: self.$password).foregroundColor(.black)
                 }.padding()
-                 .background(Color.white)
+                 .background(Color.blue)
                  .opacity(0.9)
                  .cornerRadius(100)
                  .padding(.bottom, 30)
@@ -59,24 +51,30 @@ struct SwiftUIView: View {
                     self.username = ""
                     self.password = ""
                 }) {
-                Text("Let's Play!")
+                Text("Submit")
                     .font(Font.custom("Georgia", size: 40.0, relativeTo: .headline))
                     .italic()
                     .padding(.all, 20)
-                    .background(customColor)
+                    .background(Color.purple)
                     .cornerRadius(40)
                     .foregroundColor(.white)
                     .padding(.bottom, 15)
                 }
                 
                 NavigationLink(destination: JoinedUsers(totalusers: self.users)) {
-                    Text("Current Users")
+                    Text("Show Users")
                         .frame(minWidth: 0, maxWidth: 200)
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(40)
                         .font(.title)
                 }
+                
+//                List {
+//                    ForEach(self.users.indices) { index in
+//                        Text("\(self.users[index].name!)")
+//                    }.onDelete(perform: removeUser)
+//                }
                 
 //                ForEach(self.users.indices) { index in
 //                    Text("\(self.users[index].name!)")
@@ -89,21 +87,27 @@ struct SwiftUIView: View {
 //                        print(error)
 //                    }
 //                }
-
-                HStack {
-                    VStack {
-                        Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-                            .frame(width: 200, height: 2)
-                        Text("Sign-in")
-                            .font(Font.custom("Helvetica-bold", size: 25))
-                            .padding(.bottom, 100)
-                    }
-                }
-            }.background(backgroundImage)
+//                HStack {
+//                    VStack {
+//                        Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+//                            .frame(width: 200, height: 2)
+//                        Text("Sign-in")
+//                            .font(Font.custom("Helvetica-bold", size: 25))
+//                            .padding(.bottom, 100)
+//                    }
+//                }
+            }
         }
     }
     }
 
+//func removeUsername(at offsets: IndexSet) {
+//    for index in offsets {
+//        let user = users[index]
+//        managedObjectContext.delete(user)
+//    }
+//}
+    
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         SwiftUIView()
