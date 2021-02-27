@@ -12,7 +12,7 @@ import CoreData
 
 public class User: NSManagedObject, Identifiable {
     @NSManaged public var breed: String?
-    @NSManaged public var name: String?
+    @NSManaged public var name: String
     @NSManaged public var dogName: String?
     @NSManaged public var created: Date?
     
