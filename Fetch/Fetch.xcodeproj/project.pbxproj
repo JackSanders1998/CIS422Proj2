@@ -16,7 +16,13 @@
 		041A09B125DF4E630068310A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041A09AF25DF4E630068310A /* LaunchScreen.storyboard */; };
 		041A09BC25DF4E630068310A /* FetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A09BB25DF4E630068310A /* FetchTests.swift */; };
 		041A09C725DF4E630068310A /* FetchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A09C625DF4E630068310A /* FetchUITests.swift */; };
+<<<<<<< HEAD
 		046E0AF425EAC43300AB2881 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046E0AF325EAC43300AB2881 /* Login.storyboard */; };
+=======
+		E33DCA0E25E72075007DEDA9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */; };
+		E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */; };
+		E3B2EE0C25E8826A00F8BC06 /* JoinedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */; };
+>>>>>>> f90d1c4344bc3688ce05d3fca8b6854d58658951
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +58,13 @@
 		041A09C225DF4E630068310A /* FetchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041A09C625DF4E630068310A /* FetchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUITests.swift; sourceTree = "<group>"; };
 		041A09C825DF4E630068310A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		046E0AF325EAC43300AB2881 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+=======
+		E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedUsers.swift; sourceTree = "<group>"; };
+>>>>>>> f90d1c4344bc3688ce05d3fca8b6854d58658951
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +95,7 @@
 		041A099525DF4E5B0068310A = {
 			isa = PBXGroup;
 			children = (
+				E33626B425E728F700AB29E9 /* Model */,
 				041A09A025DF4E5B0068310A /* Fetch */,
 				041A09BA25DF4E630068310A /* FetchTests */,
 				041A09C525DF4E630068310A /* FetchUITests */,
@@ -103,6 +116,7 @@
 		041A09A025DF4E5B0068310A /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
+				E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */,
 				041A09A125DF4E5B0068310A /* AppDelegate.swift */,
 				041A09A325DF4E5B0068310A /* SceneDelegate.swift */,
 				041A09A525DF4E5B0068310A /* ViewController.swift */,
@@ -112,6 +126,7 @@
 				041A09AF25DF4E630068310A /* LaunchScreen.storyboard */,
 				041A09B225DF4E630068310A /* Info.plist */,
 				041A09AA25DF4E5B0068310A /* Fetch.xcdatamodeld */,
+				E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */,
 			);
 			path = Fetch;
 			sourceTree = "<group>";
@@ -132,6 +147,14 @@
 				041A09C825DF4E630068310A /* Info.plist */,
 			);
 			path = FetchUITests;
+			sourceTree = "<group>";
+		};
+		E33626B425E728F700AB29E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +292,9 @@
 				041A09A625DF4E5B0068310A /* ViewController.swift in Sources */,
 				041A09A225DF4E5B0068310A /* AppDelegate.swift in Sources */,
 				041A09A425DF4E5B0068310A /* SceneDelegate.swift in Sources */,
+				E33DCA0E25E72075007DEDA9 /* SwiftUIView.swift in Sources */,
+				E3B2EE0C25E8826A00F8BC06 /* JoinedUsers.swift in Sources */,
+				E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
