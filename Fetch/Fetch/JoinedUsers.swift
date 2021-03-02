@@ -14,8 +14,11 @@ struct JoinedUsers: View {
     var body: some View {
         List {
             ForEach(self.totalusers.indices) { index in
-            Text("\(self.totalusers[index].name)")
-                
+                VStack (alignment: .leading){
+                    Text("Owner: \(self.totalusers[index].name)")
+                    Text("Dog: \(self.totalusers[index].dogName)")
+                    Text("Breed: \(self.totalusers[index].breed)")
+                }
             }.onDelete(perform: removeUsername)
         }
     }
