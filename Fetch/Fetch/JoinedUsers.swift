@@ -10,29 +10,32 @@ import SwiftUI
 struct JoinedUsers: View {
     @State var totalusers: FetchedResults<User>
     @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(entity: User.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \User.created, ascending: true)]) var users: FetchedResults<User>
     
     var body: some View {
-        List {
-            ForEach(self.totalusers.indices) { index in
-                VStack (alignment: .leading){
-                    Text("Owner: \(self.totalusers[index].name)")
-                    Text("Dog: \(self.totalusers[index].dogName)")
-                    Text("Breed: \(self.totalusers[index].breed)")
-                }
-            }.onDelete(perform: removeUsername)
-        }
+            List {
+                ForEach(users, id: \.self) { user in
+                    VStack (alignment: .leading){
+                        Text("Owner: \(user.name)")
+                        Text("Dog: \(user.dogName)")
+                        Text("Breed: \(user.breed)")
+                    }
+                    
+                }.onDelete(perform: removeUsername)
+                
+            }
     }
     // Functionality to delete a user
-    
     func removeUsername(at offsets: IndexSet) {
         for index in offsets {
-            let user = totalusers[index]
+            let user = users[index]
             managedObjectContext.delete(user)
-            do {
-                try managedObjectContext.save()
-            } catch {
-                print(error)
-            }
+//            do {
+//                try managedObjectContext.save()
+//            } catch {
+//                print(error)
+//            }
+            try? managedObjectContext.save()
         }
     }
 }

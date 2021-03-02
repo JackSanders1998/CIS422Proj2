@@ -13,7 +13,6 @@ struct SwiftUIView: View {
     @FetchRequest(entity: User.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \User.created, ascending: true)]) var users: FetchedResults<User>
 
     @State private var username = ""
-    @State private var password = ""
     @State private var dogname = ""
     @State private var breed = ""
     @State private var created = ""
@@ -59,11 +58,12 @@ struct SwiftUIView: View {
                         user.breed = self.breed
                         user.created = Date()
                         try? self.managedObjectContext.save()
-                        print(user)
                         self.username = ""
                         self.dogname = ""
                         self.breed = ""
+                        
                     }) {
+                        
                     Text("Submit")
                         .font(Font.custom("Georgia", size: 40.0, relativeTo: .headline))
                         .italic()
@@ -88,12 +88,6 @@ struct SwiftUIView: View {
         }
     }
 
-func removeUsername(at offsets: IndexSet) {
-    for index in offsets {
-        let user = users[index]
-        managedObjectContext.delete(user)
-    }
-}
     
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
