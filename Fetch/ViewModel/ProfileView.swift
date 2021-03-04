@@ -19,12 +19,18 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image("snow")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 500.0, height: 300.0, alignment: .top)
-                Spacer()
+                VStack {
+                    Image("snow")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 500.0, height: 300.0, alignment: .top)
+                    HStack {
+                        Text("edit")
+                        Image(systemName: "camera.fill")
+                    }
+                }
                 
+                Spacer()
             }.navigationBarTitle("Profile")
         }
     }
