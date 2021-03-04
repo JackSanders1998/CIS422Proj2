@@ -16,6 +16,7 @@
 		041A09B125DF4E630068310A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041A09AF25DF4E630068310A /* LaunchScreen.storyboard */; };
 		041A09BC25DF4E630068310A /* FetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A09BB25DF4E630068310A /* FetchTests.swift */; };
 		041A09C725DF4E630068310A /* FetchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A09C625DF4E630068310A /* FetchUITests.swift */; };
+		043DC3DC25F06CEE001566E7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043DC3DB25F06CEE001566E7 /* Login.storyboard */; };
 		E33DCA0E25E72075007DEDA9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */; };
 		E34CC83B25EAF6DC00F1EEEE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E34CC83A25EAF6DC00F1EEEE /* CloudKit.framework */; };
 		E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */; };
@@ -55,6 +56,7 @@
 		041A09C225DF4E630068310A /* FetchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041A09C625DF4E630068310A /* FetchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUITests.swift; sourceTree = "<group>"; };
 		041A09C825DF4E630068310A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		043DC3DB25F06CEE001566E7 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		E34CC83225EAF5E700F1EEEE /* Fetch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fetch.entitlements; sourceTree = "<group>"; };
 		E34CC83A25EAF6DC00F1EEEE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -124,6 +126,7 @@
 				041A09B225DF4E630068310A /* Info.plist */,
 				041A09AA25DF4E5B0068310A /* Fetch.xcdatamodeld */,
 				E34CC83225EAF5E700F1EEEE /* Fetch.entitlements */,
+				043DC3DB25F06CEE001566E7 /* Login.storyboard */,
 			);
 			path = Fetch;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043DC3DC25F06CEE001566E7 /* Login.storyboard in Resources */,
 				041A09B125DF4E630068310A /* LaunchScreen.storyboard in Resources */,
 				041A09AE25DF4E630068310A /* Assets.xcassets in Resources */,
 				041A09A925DF4E5B0068310A /* Main.storyboard in Resources */,
