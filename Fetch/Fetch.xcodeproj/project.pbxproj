@@ -16,8 +16,13 @@
 		041A09B125DF4E630068310A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041A09AF25DF4E630068310A /* LaunchScreen.storyboard */; };
 		041A09BC25DF4E630068310A /* FetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A09BB25DF4E630068310A /* FetchTests.swift */; };
 		041A09C725DF4E630068310A /* FetchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A09C625DF4E630068310A /* FetchUITests.swift */; };
+		E326534C25F070C000A9222C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326534B25F070C000A9222C /* SettingView.swift */; };
+		E326535125F070CB00A9222C /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326535025F070CB00A9222C /* MatchingView.swift */; };
+		E326535625F0722900A9222C /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326535525F0722900A9222C /* DeckView.swift */; };
 		E33DCA0E25E72075007DEDA9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */; };
 		E34CC83B25EAF6DC00F1EEEE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E34CC83A25EAF6DC00F1EEEE /* CloudKit.framework */; };
+		E34CC86425F02F2100F1EEEE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CC86325F02F2100F1EEEE /* LoginView.swift */; };
+		E34CC86925F04C9000F1EEEE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CC86825F04C9000F1EEEE /* ProfileView.swift */; };
 		E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */; };
 		E3B2EE0C25E8826A00F8BC06 /* JoinedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */; };
 /* End PBXBuildFile section */
@@ -55,9 +60,14 @@
 		041A09C225DF4E630068310A /* FetchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041A09C625DF4E630068310A /* FetchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUITests.swift; sourceTree = "<group>"; };
 		041A09C825DF4E630068310A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E326534B25F070C000A9222C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		E326535025F070CB00A9222C /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
+		E326535525F0722900A9222C /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		E34CC83225EAF5E700F1EEEE /* Fetch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fetch.entitlements; sourceTree = "<group>"; };
 		E34CC83A25EAF6DC00F1EEEE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		E34CC86325F02F2100F1EEEE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E34CC86825F04C9000F1EEEE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedUsers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +134,11 @@
 				041A09B225DF4E630068310A /* Info.plist */,
 				041A09AA25DF4E5B0068310A /* Fetch.xcdatamodeld */,
 				E34CC83225EAF5E700F1EEEE /* Fetch.entitlements */,
+				E34CC86325F02F2100F1EEEE /* LoginView.swift */,
+				E34CC86825F04C9000F1EEEE /* ProfileView.swift */,
+				E326534B25F070C000A9222C /* SettingView.swift */,
+				E326535025F070CB00A9222C /* MatchingView.swift */,
+				E326535525F0722900A9222C /* DeckView.swift */,
 			);
 			path = Fetch;
 			sourceTree = "<group>";
@@ -293,12 +308,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				041A09AC25DF4E5B0068310A /* Fetch.xcdatamodeld in Sources */,
+				E326534C25F070C000A9222C /* SettingView.swift in Sources */,
+				E34CC86925F04C9000F1EEEE /* ProfileView.swift in Sources */,
 				041A09A625DF4E5B0068310A /* ViewController.swift in Sources */,
 				041A09A225DF4E5B0068310A /* AppDelegate.swift in Sources */,
 				041A09A425DF4E5B0068310A /* SceneDelegate.swift in Sources */,
 				E33DCA0E25E72075007DEDA9 /* SwiftUIView.swift in Sources */,
+				E34CC86425F02F2100F1EEEE /* LoginView.swift in Sources */,
 				E3B2EE0C25E8826A00F8BC06 /* JoinedUsers.swift in Sources */,
+				E326535125F070CB00A9222C /* MatchingView.swift in Sources */,
 				E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */,
+				E326535625F0722900A9222C /* DeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
