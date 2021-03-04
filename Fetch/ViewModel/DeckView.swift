@@ -9,7 +9,14 @@ import SwiftUI
 
 struct DeckView: View {
     var body: some View {
-        Text("Home")
+        NavigationView {
+            VStack {
+                Image("house")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 400.0, height: 300.0, alignment: .top)
+            }
+        }
     }
 }
 

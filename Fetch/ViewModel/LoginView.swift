@@ -108,7 +108,7 @@ struct SignupView: View {
                 .bold()
                 .padding(.trailing, 40)
 
-            NavigationLink(destination: ProfileView()) {
+            NavigationLink(destination: TabLayout()) {
             Image(systemName: "arrowshape.turn.up.right.circle").resizable()
                 .frame(width: 60, height: 60)
                 .aspectRatio(contentMode: .fit)
