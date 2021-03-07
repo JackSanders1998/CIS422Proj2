@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct TabLayout: View {
-    @State private var selection = 0
+    @State var targetTab = ""
     var body: some View {
-        TabView {
+        TabView(selection: $targetTab) {
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
-                }.tag(0)
+                }.tag("Profile")
                 .navigationBarTitle("")
                 .navigationBarBackButtonHidden(true)
                 .navigationBarHidden(true)
@@ -23,14 +23,16 @@ struct TabLayout: View {
             DeckView()
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
-                }.tag(0)
+                }
                 .navigationBarTitle("")
                 .navigationBarBackButtonHidden(true)
                 .navigationBarHidden(true)
+                .tag("Deck")
+            
             SwiftUIView()
                 .tabItem {
                     Label("Matches", systemImage: "person.2.square.stack.fill")
-                }.tag(0)
+                }.tag("Matches")
                 .navigationBarTitle("")
                 .navigationBarBackButtonHidden(true)
                 .navigationBarHidden(true)
@@ -38,7 +40,7 @@ struct TabLayout: View {
     }
 }
 
-struct temporary_Previews: PreviewProvider {
+struct TabLayout_Previews: PreviewProvider {
     static var previews: some View {
         TabLayout()
     }

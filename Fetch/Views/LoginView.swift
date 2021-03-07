@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     // Main View: Aux functions below
-    //
+    @State private var signupSheet = false
     var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
     var titleColor = Color(#colorLiteral(red: 0.6689291596, green: 0.2796352208, blue: 0.6291314363, alpha: 1))
     var body: some View {
@@ -30,20 +30,28 @@ struct LoginView: View {
                     TextFieldView(inputText: "Name")
                     TextFieldView(inputText: "Email")
                     pwFieldView(inputText: "Password")
-                    SignupView()
+                    SigninView()
                         .navigationBarTitle("")
                         .navigationBarHidden(true)
                         .navigationBarBackButtonHidden(true)
                     Spacer()
-                    VStack {
-                        Text("Sign in")
-                            .font(Font.custom("AppleSDGothicNeo-Bold", size: 20.0, relativeTo: .headline))
+                    Button("Sign up") {
+                        self.signupSheet.toggle()
+                    }
+                    .sheet(isPresented: $signupSheet) {
+                        SignupView()
                     }
                 }
             }
         }
     }
 }
+
+//struct SignupView: View {
+//    var body: some View {
+//        Text("This is the sign up page!")
+//    }
+//}
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
@@ -97,18 +105,16 @@ struct pwFieldView: View {
     }
 }
 
-struct SignupView: View {
+struct SigninView: View {
     var customButtonColor = Color(#colorLiteral(red: 0.7638114691, green: 0.2832764089, blue: 0.7193431258, alpha: 1))
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
     var body: some View {
         HStack {
-            Text("Sign up")
+            Text("Sign in")
                 .font(Font.custom("AppleSDGothicNeo-Thin", size: 40.0, relativeTo: .headline))
                 .bold()
                 .padding(.trailing, 40)
 
-            NavigationLink(destination: TabLayout()) {
+            NavigationLink(destination: TabLayout(targetTab: "Deck")) {
             Image(systemName: "arrowshape.turn.up.right.circle").resizable()
                 .frame(width: 60, height: 60)
                 .aspectRatio(contentMode: .fit)
@@ -116,26 +122,5 @@ struct SignupView: View {
                 .padding(.leading, 80)
             }
         }
-//        HStack {
-//            Text("Sign up")
-//                .font(Font.custom("AppleSDGothicNeo-Thin", size: 40.0, relativeTo: .headline))
-//                .bold()
-//                .padding(.trailing, 40)
-//            Button(action: {
-//                self.presentationMode.wrappedValue.dismiss()
-//            })  {
-//                Image(systemName: "arrowshape.turn.up.right.circle").resizable()
-//                    .frame(width: 50, height: 60)
-//                    .aspectRatio(contentMode: .fit)
-//                    .foregroundColor(customButtonColor)
-//                    .padding(.leading, 80)
-//                }
-//        }
-//        .padding(.top, 10)
-//        .padding(.bottom, 10)
-//        .navigationBarTitle("")
-//        .navigationBarBackButtonHidden(true)
-//        .navigationBarHidden(true)
     }
 }
-
