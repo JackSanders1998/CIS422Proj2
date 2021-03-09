@@ -26,10 +26,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 AppDelegate).persistentContainer.viewContext
             
             /*  CHANGE BELOW FOR SIMULATOR  */
-            let contentView = LoginView().environment(\.managedObjectContext,
+            let contentView = AuthenticationView().environment(\.managedObjectContext,
                 managedObjectContext)
             
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(SessionStore()))
             self.window = window
             window.makeKeyAndVisible()
         }

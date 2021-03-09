@@ -25,6 +25,10 @@
 		E33DCA0E25E72075007DEDA9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */; };
 		E34CC86425F02F2100F1EEEE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CC86325F02F2100F1EEEE /* LoginView.swift */; };
 		E34CC86925F04C9000F1EEEE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CC86825F04C9000F1EEEE /* ProfileView.swift */; };
+		E377355C25F7047700A7F821 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377355B25F7047700A7F821 /* SessionStore.swift */; };
+		E377356125F7090E00A7F821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377356025F7090E00A7F821 /* ContentView.swift */; };
+		E377356625F709D100A7F821 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377356525F709D100A7F821 /* AuthenticationView.swift */; };
+		E377356B25F81D9C00A7F821 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377356A25F81D9C00A7F821 /* SignUpScreen.swift */; };
 		E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */; };
 		E3B2EE0C25E8826A00F8BC06 /* JoinedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */; };
 		E3C4302225F1C681002AC018 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C4302125F1C681002AC018 /* SignupView.swift */; };
@@ -78,12 +82,16 @@
 		E34CC83225EAF5E700F1EEEE /* Fetch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fetch.entitlements; sourceTree = "<group>"; };
 		E34CC86325F02F2100F1EEEE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E34CC86825F04C9000F1EEEE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E377353325F6F68D00A7F821 /* Fetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fetch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E377353425F6F68D00A7F821 /* FetchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E377353525F6F68D00A7F821 /* FetchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E377355B25F7047700A7F821 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		E377356025F7090E00A7F821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E377356525F709D100A7F821 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		E377356A25F81D9C00A7F821 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedUsers.swift; sourceTree = "<group>"; };
 		E3C4302125F1C681002AC018 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		E3E7CDE825F6F4EA00182AE4 /* Fetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Fetch.app; path = "/Users/ronny/Desktop/CIS422Proj2/Fetch/build/Debug-iphoneos/Fetch.app"; sourceTree = "<absolute>"; };
-		E3E7CDE925F6F4EA00182AE4 /* FetchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FetchTests.xctest; path = "/Users/ronny/Desktop/CIS422Proj2/Fetch/build/Debug-iphoneos/FetchTests.xctest"; sourceTree = "<absolute>"; };
-		E3E7CDEA25F6F4EA00182AE4 /* FetchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FetchUITests.xctest; path = "/Users/ronny/Desktop/CIS422Proj2/Fetch/build/Debug-iphoneos/FetchUITests.xctest"; sourceTree = "<absolute>"; };
 		E3E7CDF125F6F57100182AE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E839C18F8BB23DB8B404102C /* Pods_Fetch_FetchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fetch_FetchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,6 +134,9 @@
 				041A09C525DF4E630068310A /* FetchUITests */,
 				4B6C2F4EBFAA0025268FF5FA /* Pods */,
 				6BE8C6524FAAC68FA8014CCA /* Frameworks */,
+				E377353325F6F68D00A7F821 /* Fetch.app */,
+				E377353425F6F68D00A7F821 /* FetchTests.xctest */,
+				E377353525F6F68D00A7F821 /* FetchUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +155,7 @@
 				E3E7CDF125F6F57100182AE4 /* GoogleService-Info.plist */,
 				041A09AA25DF4E5B0068310A /* Fetch.xcdatamodeld */,
 				E34CC83225EAF5E700F1EEEE /* Fetch.entitlements */,
+				E377355B25F7047700A7F821 /* SessionStore.swift */,
 			);
 			path = Fetch;
 			sourceTree = "<group>";
@@ -176,7 +188,6 @@
 				31754E3DFE3BA27396930FC4 /* Pods-FetchTests.debug.xcconfig */,
 				0881111627E3DFE435605263 /* Pods-FetchTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -200,6 +211,9 @@
 				E326535025F070CB00A9222C /* MatchingView.swift */,
 				E326535525F0722900A9222C /* DeckView.swift */,
 				E3C4302125F1C681002AC018 /* SignupView.swift */,
+				E377356025F7090E00A7F821 /* ContentView.swift */,
+				E377356525F709D100A7F821 /* AuthenticationView.swift */,
+				E377356A25F81D9C00A7F821 /* SignUpScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,7 +245,7 @@
 			);
 			name = Fetch;
 			productName = Fetch;
-			productReference = E3E7CDE825F6F4EA00182AE4 /* Fetch.app */;
+			productReference = E377353325F6F68D00A7F821 /* Fetch.app */;
 			productType = "com.apple.product-type.application";
 		};
 		041A09B625DF4E630068310A /* FetchTests */ = {
@@ -250,7 +264,7 @@
 			);
 			name = FetchTests;
 			productName = FetchTests;
-			productReference = E3E7CDE925F6F4EA00182AE4 /* FetchTests.xctest */;
+			productReference = E377353425F6F68D00A7F821 /* FetchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		041A09C125DF4E630068310A /* FetchUITests */ = {
@@ -270,7 +284,7 @@
 			);
 			name = FetchUITests;
 			productName = FetchUITests;
-			productReference = E3E7CDEA25F6F4EA00182AE4 /* FetchUITests.xctest */;
+			productReference = E377353525F6F68D00A7F821 /* FetchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -453,6 +467,7 @@
 			files = (
 				E3C4302225F1C681002AC018 /* SignupView.swift in Sources */,
 				041A09AC25DF4E5B0068310A /* Fetch.xcdatamodeld in Sources */,
+				E377356125F7090E00A7F821 /* ContentView.swift in Sources */,
 				E326534C25F070C000A9222C /* SettingView.swift in Sources */,
 				E34CC86925F04C9000F1EEEE /* ProfileView.swift in Sources */,
 				041A09A625DF4E5B0068310A /* ViewController.swift in Sources */,
@@ -461,7 +476,10 @@
 				E33DCA0E25E72075007DEDA9 /* SwiftUIView.swift in Sources */,
 				E34CC86425F02F2100F1EEEE /* LoginView.swift in Sources */,
 				E3B2EE0C25E8826A00F8BC06 /* JoinedUsers.swift in Sources */,
+				E377356B25F81D9C00A7F821 /* SignUpScreen.swift in Sources */,
 				E326535125F070CB00A9222C /* MatchingView.swift in Sources */,
+				E377355C25F7047700A7F821 /* SessionStore.swift in Sources */,
+				E377356625F709D100A7F821 /* AuthenticationView.swift in Sources */,
 				E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */,
 				E326535625F0722900A9222C /* DeckView.swift in Sources */,
 				E326536225F151FA00A9222C /* TabLayout.swift in Sources */,

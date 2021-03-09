@@ -27,7 +27,7 @@ struct LoginView: View {
                             .bold()
                             .foregroundColor(titleColor)
                     }
-                    TextFieldView(inputText: "Name")
+//                    TextFieldView(inputText: "Name")
                     TextFieldView(inputText: "Email")
                     pwFieldView(inputText: "Password")
                     SigninView()
@@ -62,7 +62,6 @@ struct LoginView_Previews: PreviewProvider {
 struct TextFieldView: View {
     @State private var name = ""
     @State private var email = ""
-    @State private var breed = ""
     @State private var password = ""
     @State var inputText = ""
     
