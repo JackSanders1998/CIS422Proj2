@@ -93,7 +93,7 @@ struct securefieldView: View {
             Text("\(inputText):").padding(.trailing, 20)
                 .foregroundColor(.white)
                 .padding(.all, 7)
-            TextField("", text: self.$name).foregroundColor(.white)
+            SecureField("", text: self.$name).foregroundColor(.white)
 //            SecureField("\(inputText)", text: $email)
 //                .font(.system(size: 25))
 //                .padding(15)
