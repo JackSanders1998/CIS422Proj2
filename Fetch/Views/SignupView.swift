@@ -31,7 +31,6 @@ struct SignupView: View {
                         VStack {
                             Text("Edit").foregroundColor(.blue)
                                 .padding(.bottom, 30)
-    //                        Image(systemName: "camera.fill")
                             
                         }
                         HStack {
@@ -39,7 +38,6 @@ struct SignupView: View {
                                 .bold()
                             Spacer()
                         }.padding(.leading, 40)
-                        
                         
                         LoginCredentials(inputText: "Name")
                         LoginCredentials(inputText: "Email")
@@ -62,7 +60,6 @@ struct SignupView: View {
                         LoginCredentials(inputText: "Age")
     //                    LoginCredentials(inputText: "Password")
                     }
-                    
                     Spacer()
                 
                 }
