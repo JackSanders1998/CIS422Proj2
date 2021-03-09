@@ -102,7 +102,7 @@ struct passwordTextField: View {
             Text("\(inputText):").padding(.trailing, 20)
                 .foregroundColor(.white)
                 .padding(.all, 7)
-            TextField("", text: self.$name).foregroundColor(.white)
+            SecureField("", text: self.$name).foregroundColor(.white)
         }.padding()
          .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
          .cornerRadius(50)
