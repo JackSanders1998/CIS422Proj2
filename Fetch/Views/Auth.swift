@@ -133,6 +133,7 @@ struct signupview: View {
                 }.padding()
                  .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
                  .cornerRadius(50)
+                .padding(.bottom, 15)
                 
                 HStack {
                     Text("Password").padding(.trailing, 20)
@@ -142,7 +143,7 @@ struct signupview: View {
                 }.padding()
                  .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
                  .cornerRadius(50)
-                .padding(.bottom, 10)
+                .padding(.bottom, 15)
                 
                 Button(action: signup) {
                     Text("Create Account")

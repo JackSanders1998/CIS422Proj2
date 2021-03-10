@@ -92,7 +92,7 @@ struct securefieldView: View {
     }
 }
 
-struct AuthenticationView: View {
+struct AuthenView: View {
     var body: some View {
         NavigationView {
             SignInView()
@@ -167,7 +167,7 @@ struct SignUpView: View {
 
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationView().environmentObject(SessionStore())
+        AuthenView().environmentObject(SessionStore())
     }
 }
 
