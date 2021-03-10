@@ -112,7 +112,6 @@ struct SigninView: View {
                 .font(Font.custom("AppleSDGothicNeo-Thin", size: 40.0, relativeTo: .headline))
                 .bold()
                 .padding(.trailing, 40)
-
             NavigationLink(destination: TabLayout(targetTab: "Deck")) {
             Image(systemName: "arrowshape.turn.up.right.circle").resizable()
                 .frame(width: 60, height: 60)

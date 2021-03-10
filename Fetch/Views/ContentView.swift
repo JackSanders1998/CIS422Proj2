@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var main: MainStore
     
     func getUser() {
         session.listen()
@@ -18,7 +19,7 @@ struct ContentView: View {
         Group {
             if (session.session != nil) {
                 Text("Welcome back!")
-                Button(action: session.signOut) {
+                Button(action: main.test) {
                     Text("Sign out")
                 }
             } else {
