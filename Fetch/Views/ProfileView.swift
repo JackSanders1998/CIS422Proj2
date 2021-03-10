@@ -86,7 +86,7 @@ struct ProfileView: View {
                         }
                         
                         let object: [String: NSString] =
-                            ["Owner": "\(name)" as NSString, "Dogname": "\(dogname)" as NSString, "Breed": "\(breed)" as NSString]
+                            ["Owner": "\(userSettings.name)" as NSString, "Dogname": "\(userSettings.dogname)" as NSString, "Breed": "\(userSettings.breed)" as NSString]
                         database.child("\(currentUser)").setValue(object)
     
 
@@ -106,6 +106,7 @@ struct ProfileView: View {
     }
 }
 
+// Struct below is used for perserving data in text fields
 class UserSettings: ObservableObject {
     @Published var name: String {
         didSet {
