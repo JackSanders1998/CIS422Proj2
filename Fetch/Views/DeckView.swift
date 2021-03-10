@@ -11,10 +11,7 @@ struct DeckView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image("house")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 400.0, height: 300.0, alignment: .top)
+                Text("Deck View")
             }
         }
     }

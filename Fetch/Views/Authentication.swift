@@ -9,7 +9,6 @@ import SwiftUI
 import Firebase
 
 
-// START!!!!!
 struct signinview: View {
     @State var email = ""
     @State var password = ""
@@ -19,6 +18,7 @@ struct signinview: View {
     var titleColor = Color(#colorLiteral(red: 0.6689291596, green: 0.2796352208, blue: 0.6291314363, alpha: 1))
     var customButtonColor = Color(#colorLiteral(red: 0.7638114691, green: 0.2832764089, blue: 0.7193431258, alpha: 1))
     
+
     func signIn() {
         session.signIn(email: email, password: password) { (result, error) in
             if let error = error {
@@ -100,6 +100,7 @@ struct CreateAccountView: View {
     @State var email = ""
     @State var password = ""
     @State var error = ""
+    
     var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
     var customButtonColor = Color(#colorLiteral(red: 0.7182822824, green: 0.2634641826, blue: 0.6803607941, alpha: 1))
     @EnvironmentObject var session: SessionStore

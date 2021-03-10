@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseDatabase
+import Firebase
 
 struct ProfileView: View {
     @State var name = ""
@@ -14,8 +15,10 @@ struct ProfileView: View {
     @State var dogname = ""
     @State var breed = ""
     private let database = Database.database().reference()
+    
 
     @EnvironmentObject var session: SessionStore
+    
     @State private var selection = 0
     var backgroundColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
     var profileUIColor = UIColor(red: 0.75, green: 0.18, blue: 0.87, alpha: 1.00)
@@ -28,13 +31,6 @@ struct ProfileView: View {
         NavigationView {
             VStack {
                 VStack {
-//                    Image("snow")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(width: 500.0, height: 300.0, alignment: .top)
-//                    HStack {
-//                        Text("edit")
-//                    }
                     HStack {
                         Text("Name:").padding(.trailing, 20)
                             .foregroundColor(.white)
@@ -76,15 +72,26 @@ struct ProfileView: View {
                     
                     // Add User info to our database (Firebase)
                     Button(action: {
+                        var currentUser: String {
+                            var result: String
+                            let temp = Auth.auth().currentUser
+                            if (temp?.email != nil) {
+                                result = temp!.uid
+                            } else {
+                                result = "nil"
+                            }
+                            return result
+                        }
+                        
                         let object: [String: NSString] =
-                            ["Dogname": "\(dogname)" as NSString, "Breed": "\(breed)" as NSString]
-                        database.child("\(name)").setValue(object)
+                            ["Owner": "\(name)" as NSString, "Dogname": "\(dogname)" as NSString, "Breed": "\(breed)" as NSString]
+                        database.child("\(currentUser)").setValue(object)
                     }) {
                         Text("update")
                             .padding(.leading, 270)
                        }
                 }
-                
+
                 Spacer()
             }.navigationBarTitle("Profile")
              .navigationBarItems(trailing: Button(action: session.signOut) {
