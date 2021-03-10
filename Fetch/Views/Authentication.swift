@@ -75,11 +75,13 @@ struct signinview: View {
                                     .foregroundColor(customButtonColor)
                             }
                         // Check's if password was supplied
+                        VStack {
                         if (error != "") {
                             Text(error)
                                 .font(.system(size:15, weight: .semibold))
                                 .foregroundColor(.red)
                                 .padding()
+                        }
                         }
                     }
                     Spacer()

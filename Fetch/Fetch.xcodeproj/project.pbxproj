@@ -205,7 +205,6 @@
 		E326535A25F1508300A9222C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E34CC86325F02F2100F1EEEE /* LoginView.swift */,
 				E326536125F151FA00A9222C /* TabLayout.swift */,
 				E34CC86825F04C9000F1EEEE /* ProfileView.swift */,
 				E326535025F070CB00A9222C /* MatchingView.swift */,
@@ -227,6 +226,7 @@
 		E3812E9025F857BE0078771A /* Playground */ = {
 			isa = PBXGroup;
 			children = (
+				E34CC86325F02F2100F1EEEE /* LoginView.swift */,
 				E326534B25F070C000A9222C /* SettingView.swift */,
 				E3C4302125F1C681002AC018 /* SignupView.swift */,
 				E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */,
