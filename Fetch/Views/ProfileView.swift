@@ -4,19 +4,19 @@
 //
 //  Created by Ronny on 3/3/21.
 //
-
 import SwiftUI
 import FirebaseDatabase
 import Firebase
+
+
 
 struct ProfileView: View {
     @State var name = ""
     @State var email = ""
     @State var dogname = ""
     @State var breed = ""
+    @State var userSettings = UserSettings()
     private let database = Database.database().reference()
-    
-
     @EnvironmentObject var session: SessionStore
     
     @State private var selection = 0
@@ -35,7 +35,7 @@ struct ProfileView: View {
                         Text("Name:").padding(.trailing, 20)
                             .foregroundColor(.white)
                             .padding(.all, 4)
-                        TextField("", text: self.$name).foregroundColor(.white)
+                        TextField("", text: $userSettings.name).foregroundColor(.white)
                     }.padding()
                     .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
                     .cornerRadius(50)
@@ -48,7 +48,7 @@ struct ProfileView: View {
                         Text("Dog Name:").padding(.trailing, 20)
                             .foregroundColor(.white)
                             .padding(.all, 4)
-                        TextField("", text: self.$dogname).foregroundColor(.white)
+                        TextField("", text: self.$userSettings.dogname).foregroundColor(.white)
                     }.padding()
                     .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
                     .cornerRadius(50)
@@ -61,7 +61,7 @@ struct ProfileView: View {
                         Text("Breed:").padding(.trailing, 20)
                             .foregroundColor(.white)
                             .padding(.all, 4)
-                        TextField("", text: self.$breed).foregroundColor(.white)
+                        TextField("", text: self.$userSettings.breed).foregroundColor(.white)
                     }.padding()
                     .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
                     .cornerRadius(50)
@@ -70,8 +70,10 @@ struct ProfileView: View {
                     .padding(.trailing, 20)
                     .padding(.top, 15)
                     
+                    
                     // Add User info to our database (Firebase)
                     Button(action: {
+                        
                         var currentUser: String {
                             var result: String
                             let temp = Auth.auth().currentUser
@@ -86,6 +88,8 @@ struct ProfileView: View {
                         let object: [String: NSString] =
                             ["Owner": "\(name)" as NSString, "Dogname": "\(dogname)" as NSString, "Breed": "\(breed)" as NSString]
                         database.child("\(currentUser)").setValue(object)
+    
+
                     }) {
                         Text("update")
                             .padding(.leading, 270)
@@ -99,6 +103,31 @@ struct ProfileView: View {
             })
             
         }
+    }
+}
+
+class UserSettings: ObservableObject {
+    @Published var name: String {
+        didSet {
+            UserDefaults.standard.set(name, forKey: "name")
+        }
+    }
+    
+    @Published var breed: String {
+        didSet {
+            UserDefaults.standard.set(breed, forKey: "breed")
+        }
+    }
+    
+    @Published var dogname: String {
+        didSet {
+            UserDefaults.standard.set(dogname, forKey: "dogname")
+        }
+    }
+    init() {
+        self.name = UserDefaults.standard.object(forKey: "name") as? String ?? ""
+        self.breed = UserDefaults.standard.object(forKey: "breed") as? String ?? ""
+        self.dogname = UserDefaults.standard.object(forKey: "dogname") as? String ?? ""
     }
 }
 
