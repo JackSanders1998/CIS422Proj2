@@ -58,7 +58,9 @@ struct SignUpScreen: View {
                         .padding(10)
                         .overlay(RoundedRectangle(cornerRadius: 40)
                             .stroke(customColor, lineWidth: 5))
+                    
                 }
+            
                 if (error != "") {
                     Text(error)
                         .font(.system(size:15, weight: .semibold))
@@ -66,14 +68,14 @@ struct SignUpScreen: View {
                         .padding()
                 }
             }
+                
+            }
         }
     }
-}
+
 
 struct emailTextField: View {
-    @State private var name = ""
     @State private var email = ""
-    @State private var password = ""
     @State var inputText = ""
     
     var body: some View {
@@ -81,18 +83,14 @@ struct emailTextField: View {
             Text("\(inputText):").padding(.trailing, 20)
                 .foregroundColor(.white)
                 .padding(.all, 7)
-            TextField("", text: self.$name).foregroundColor(.white)
+            TextField("", text: $email).foregroundColor(.white)
         }.padding()
          .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
          .cornerRadius(50)
-        
-        
     }
 }
 
 struct passwordTextField: View {
-    @State private var name = ""
-    @State private var email = ""
     @State private var password = ""
     @State var inputText = ""
     
@@ -102,7 +100,7 @@ struct passwordTextField: View {
             Text("\(inputText):").padding(.trailing, 20)
                 .foregroundColor(.white)
                 .padding(.all, 7)
-            SecureField("", text: self.$name).foregroundColor(.white)
+            SecureField("", text: $password).foregroundColor(.white)
         }.padding()
          .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
          .cornerRadius(50)

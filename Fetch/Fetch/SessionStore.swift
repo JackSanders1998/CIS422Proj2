@@ -12,13 +12,13 @@ import Combine
 
 class SessionStore: ObservableObject {
     var change = PassthroughSubject<SessionStore, Never>()
-    @Published var session: Users? {didSet {self.change.send(self)}}
+    @Published var session: User? {didSet {self.change.send(self)}}
     var handle: AuthStateDidChangeListenerHandle?
     
     func listen() {
         handle = Auth.auth().addStateDidChangeListener({(auth, user) in
             if let user = user  {
-                self.session = Users(uid: user.uid, email: user.email)
+                self.session = User(uid: user.uid, email: user.email)
             } else {
                 self.session = nil
             }
@@ -52,7 +52,7 @@ class SessionStore: ObservableObject {
     }
 }
 
-struct Users {
+struct User {
     var uid: String
     var email: String?
     

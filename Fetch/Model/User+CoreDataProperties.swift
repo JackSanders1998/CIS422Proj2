@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-public class User: NSManagedObject, Identifiable {
+public class USER: NSManagedObject, Identifiable {
     @NSManaged public var breed: String
     @NSManaged public var name: String
     @NSManaged public var dogName: String
@@ -19,9 +19,9 @@ public class User: NSManagedObject, Identifiable {
 
 }
 
-extension User {
-    static func getAllUsers() -> NSFetchRequest<User> {
-        let request: NSFetchRequest<User> = User.fetchRequest() as! NSFetchRequest<User>
+extension USER {
+    static func getAllUsers() -> NSFetchRequest<USER> {
+        let request: NSFetchRequest<USER> = USER.fetchRequest() as! NSFetchRequest<USER>
         
 //        let sortDescriptor = NSSortDescriptor(key: "created", ascending: true)
 //

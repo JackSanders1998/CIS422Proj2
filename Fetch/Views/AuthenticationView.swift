@@ -59,9 +59,7 @@ struct SignInView: View {
 }
 
 struct textfieldView: View {
-    @State private var name = ""
     @State private var email = ""
-    @State private var password = ""
     @State var inputText = ""
     
     var body: some View {
@@ -69,11 +67,7 @@ struct textfieldView: View {
             Text("\(inputText):").padding(.trailing, 20)
                 .foregroundColor(.white)
                 .padding(.all, 7)
-            TextField("", text: self.$name).foregroundColor(.white)
-//            TextField("\(inputText)", text: $email)
-//                .font(.system(size: 25))
-//                .padding(15)
-//                .background(RoundedRectangle(cornerRadius: 20).foregroundColor(.gray))
+            TextField("", text: self.$email).foregroundColor(.white)
         }.padding()
          .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
          .cornerRadius(50)
@@ -83,8 +77,6 @@ struct textfieldView: View {
 }
 
 struct securefieldView: View {
-    @State private var name = ""
-    @State private var email = ""
     @State private var password = ""
     @State var inputText = ""
     
@@ -93,16 +85,13 @@ struct securefieldView: View {
             Text("\(inputText):").padding(.trailing, 20)
                 .foregroundColor(.white)
                 .padding(.all, 7)
-            SecureField("", text: self.$name).foregroundColor(.white)
-//            SecureField("\(inputText)", text: $email)
-//                .font(.system(size: 25))
-//                .padding(15)
-//                .background(RoundedRectangle(cornerRadius: 20).foregroundColor(.gray))
+            SecureField("", text: self.$password).foregroundColor(.white)
         }.padding()
          .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
          .cornerRadius(50)
     }
 }
+
 struct AuthenticationView: View {
     var body: some View {
         NavigationView {
@@ -112,15 +101,73 @@ struct AuthenticationView: View {
 }
 
 struct SignUpView: View {
-    var body: some View {
-        VStack {
-            Text("Sign up view")
+    @State var email = ""
+    @State var password = ""
+    @State var error = ""
+    @EnvironmentObject var session: SessionStore
+    
+    func signup() {
+        session.signUp(email: email, password: password) {(result, error) in
+            if let error = error {
+                self.error = error.localizedDescription
+            } else {
+                self.email = ""
+                self.password = ""
+            }
         }
     }
+    
+    var body: some View {
+        VStack {
+            Text("Create account")
+                .padding(.bottom, 10)
+            HStack {
+                Text("Email").padding(.trailing, 20)
+                    .foregroundColor(.white)
+                    .padding(.all, 7)
+                TextField("", text: $email).foregroundColor(.white)
+            }.padding()
+             .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+             .cornerRadius(50)
+            
+            HStack {
+                Text("Password").padding(.trailing, 20)
+                    .foregroundColor(.white)
+                    .padding(.all, 7)
+                SecureField("", text: $password).foregroundColor(.white)
+            }.padding()
+             .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+             .cornerRadius(50)
+            
+            Button(action: signup) {
+                Text("create account")
+                    .fontWeight(.bold)
+                    .font(.title)
+                    .padding()
+                    .background(Color.purple)
+                    .cornerRadius(40)
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 40)
+                            .stroke(Color.purple, lineWidth: 5)
+                    )
+            }
+            
+            if (error != "") {
+                Text(error)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            
+        }
+        
+    }
 }
+
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationView()
+        AuthenticationView().environmentObject(SessionStore())
     }
 }
 

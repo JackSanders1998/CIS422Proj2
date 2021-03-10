@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct JoinedUsers: View {
-    @State var totalusers: FetchedResults<User>
+    @State var totalusers: FetchedResults<USER>
     @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(entity: User.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \User.created, ascending: true)]) var users: FetchedResults<User>
+    @FetchRequest(entity: USER.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \USER.created, ascending: true)]) var users: FetchedResults<USER>
     
     var body: some View {
             List {

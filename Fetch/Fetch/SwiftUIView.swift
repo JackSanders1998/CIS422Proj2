@@ -10,7 +10,7 @@ import SwiftUI
 struct SwiftUIView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(entity: User.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \User.created, ascending: true)]) var users: FetchedResults<User>
+    @FetchRequest(entity: USER.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \USER.created, ascending: true)]) var users: FetchedResults<USER>
 
     @State private var username = ""
     @State private var dogname = ""
@@ -52,7 +52,7 @@ struct SwiftUIView: View {
                     
                     // Section below adds usernames to coredata
                     Button(action: {
-                        let user = User(context: self.managedObjectContext)
+                        let user = USER(context: self.managedObjectContext)
                         user.name = self.username
                         user.dogName = self.dogname
                         user.breed = self.breed

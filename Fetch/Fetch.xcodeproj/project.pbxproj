@@ -31,6 +31,7 @@
 		E377356B25F81D9C00A7F821 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377356A25F81D9C00A7F821 /* SignUpScreen.swift */; };
 		E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */; };
 		E3B2EE0C25E8826A00F8BC06 /* JoinedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */; };
+		E3BA6F1425F840A800F81F86 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA6F1325F840A800F81F86 /* Auth.swift */; };
 		E3C4302225F1C681002AC018 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C4302125F1C681002AC018 /* SignupView.swift */; };
 		E3E7CDF225F6F57100182AE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3E7CDF125F6F57100182AE4 /* GoogleService-Info.plist */; };
 		F69D759F8532792EBAFE5F08 /* Pods_FetchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726139D191402E8D55570944 /* Pods_FetchTests.framework */; };
@@ -91,6 +92,7 @@
 		E377356A25F81D9C00A7F821 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedUsers.swift; sourceTree = "<group>"; };
+		E3BA6F1325F840A800F81F86 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		E3C4302125F1C681002AC018 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		E3E7CDF125F6F57100182AE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E839C18F8BB23DB8B404102C /* Pods_Fetch_FetchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fetch_FetchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +216,7 @@
 				E377356025F7090E00A7F821 /* ContentView.swift */,
 				E377356525F709D100A7F821 /* AuthenticationView.swift */,
 				E377356A25F81D9C00A7F821 /* SignUpScreen.swift */,
+				E3BA6F1325F840A800F81F86 /* Auth.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				E377356125F7090E00A7F821 /* ContentView.swift in Sources */,
 				E326534C25F070C000A9222C /* SettingView.swift in Sources */,
 				E34CC86925F04C9000F1EEEE /* ProfileView.swift in Sources */,
+				E3BA6F1425F840A800F81F86 /* Auth.swift in Sources */,
 				041A09A625DF4E5B0068310A /* ViewController.swift in Sources */,
 				041A09A225DF4E5B0068310A /* AppDelegate.swift in Sources */,
 				041A09A425DF4E5B0068310A /* SceneDelegate.swift in Sources */,
