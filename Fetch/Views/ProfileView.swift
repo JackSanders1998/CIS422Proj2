@@ -87,7 +87,7 @@ struct ProfileView: View {
                         
                         let object: [String: NSString] =
                             ["Owner": "\(userSettings.name)" as NSString, "Dogname": "\(userSettings.dogname)" as NSString, "Breed": "\(userSettings.breed)" as NSString]
-                        database.child("\(currentUser)").setValue(object)
+                        database.child("Users").child("\(currentUser)").setValue(object)
     
 
                     }) {
