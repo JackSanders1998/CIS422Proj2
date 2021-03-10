@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import FirebaseDatabase
 struct ContentView: View {
     @EnvironmentObject var session: SessionStore
     
@@ -17,10 +17,6 @@ struct ContentView: View {
     var body: some View {
         Group {
             if (session.session != nil) {
-//                Text("Welcome back!")
-//                Button(action: session.signOut) {
-//                    Text("Sign out")
-//                }
                 TabLayout()
             } else {
                 authview()
@@ -28,6 +24,7 @@ struct ContentView: View {
         }.onAppear(perform: getUser)
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
