@@ -25,10 +25,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let managedObjectContext = (UIApplication.shared.delegate as!
                 AppDelegate).persistentContainer.viewContext
             
-            let contentView = SwiftUIView().environment(\.managedObjectContext,
+            /*  CHANGE BELOW FOR SIMULATOR  */
+            let contentView = ContentView().environment(\.managedObjectContext,
                 managedObjectContext)
             
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(SessionStore()))
             self.window = window
             window.makeKeyAndVisible()
         }
