@@ -171,7 +171,7 @@ struct AuthenticationView_Previews: PreviewProvider {
     }
 }
 
-struct CreateAccountView: View {
+struct AccountView: View {
     @State private var signupSheet = false
     var customButtonColor = Color(#colorLiteral(red: 0.7638114691, green: 0.2832764089, blue: 0.7193431258, alpha: 1))
     var body: some View {

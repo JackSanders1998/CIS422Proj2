@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var session: SessionStore
     @State private var selection = 0
     var backgroundColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
     var profileUIColor = UIColor(red: 0.75, green: 0.18, blue: 0.87, alpha: 1.00)
@@ -31,6 +32,9 @@ struct ProfileView: View {
                 }
                 
                 Spacer()
+                    Button(action: session.signOut) {
+                        Text("Sign out")
+                    }
             }.navigationBarTitle("Profile")
         }
     }

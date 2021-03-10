@@ -17,13 +17,13 @@ struct ContentView: View {
     var body: some View {
         Group {
             if (session.session != nil) {
-                Text("Welcome back!")
-                Button(action: session.signOut) {
-                    Text("Sign out")
-                }
+//                Text("Welcome back!")
+//                Button(action: session.signOut) {
+//                    Text("Sign out")
+//                }
+                TabLayout()
             } else {
                 authview()
-//                AuthenticationView()
             }
         }.onAppear(perform: getUser)
     }
@@ -34,3 +34,8 @@ struct ContentView_Previews: PreviewProvider {
         ContentView().environmentObject(SessionStore())
     }
 }
+
+
+
+
+

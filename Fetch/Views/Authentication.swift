@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 
+// START!!!!!
 struct signinview: View {
     @State var email = ""
     @State var password = ""
@@ -34,7 +35,6 @@ struct signinview: View {
                  startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea(.all)
                 VStack {
-                    
                     VStack {
                         Text("Fetch")
                             .font(Font.custom("AppleSDGothicNeo-Thin", size: 80.0, relativeTo: .headline))
@@ -42,7 +42,7 @@ struct signinview: View {
                             .foregroundColor(titleColor)
                             .padding(.top, 80)
                     }
-                    
+                    // Email Text Field
                     HStack {
                         Text("Email").padding(.trailing, 20)
                             .foregroundColor(.white)
@@ -52,7 +52,7 @@ struct signinview: View {
                      .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
                      .cornerRadius(50)
                      .padding(.bottom, 20)
-                    
+                    // Password Text Field
                     HStack {
                         Text("Password").padding(.trailing, 20)
                             .foregroundColor(.white)
@@ -62,14 +62,18 @@ struct signinview: View {
                      .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
                      .cornerRadius(50)
                      .padding(.bottom, 20)
-                    
+                    //Sign in stack
                     HStack {
                         Text("Sign in")
+                            .font(.system(size: 34))
+                            .padding(.leading, 20)
+                            //
                             Button(action: signIn) {
                                 Image(systemName: "arrowshape.turn.up.right.circle").resizable()
                                     .frame(width: 60, height: 60)
                                     .foregroundColor(customButtonColor)
                             }
+                        // Check's if password was supplied
                         if (error != "") {
                             Text(error)
                                 .font(.system(size:15, weight: .semibold))
@@ -78,22 +82,20 @@ struct signinview: View {
                         }
                     }
                     Spacer()
-                    NavigationLink(destination: signupview()) {
+                    //
+                    NavigationLink(destination: CreateAccountView()) {
                         HStack {
                             Text("Create an account")
                         }
                     
                     }
-                
                 }.padding(.horizontal, 20)
-                
             }
         }
-    
 }
 
-
-struct signupview: View {
+// Start new user sign in process
+struct CreateAccountView: View {
     @State var email = ""
     @State var password = ""
     @State var error = ""
@@ -144,7 +146,7 @@ struct signupview: View {
                  .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
                  .cornerRadius(50)
                 .padding(.bottom, 15)
-                
+                // Button: Navigate back to sign in screen
                 Button(action: signup) {
                     Text("Create Account")
                         .fontWeight(.bold)
@@ -155,7 +157,8 @@ struct signupview: View {
                         .padding(10)
                         .overlay(RoundedRectangle(cornerRadius: 40)
                             .stroke(customButtonColor, lineWidth: 5))
-                }
+                }.padding(.bottom, 120)
+                
                 if (error != "") {
                     Text(error)
                         .foregroundColor(.red)

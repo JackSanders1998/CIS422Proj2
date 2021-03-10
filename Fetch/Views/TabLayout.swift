@@ -29,7 +29,7 @@ struct TabLayout: View {
                 .navigationBarHidden(true)
                 .tag("Deck")
             
-            SwiftUIView()
+            MatchingView()
                 .tabItem {
                     Label("Matches", systemImage: "person.2.square.stack.fill")
                 }.tag("Matches")
@@ -42,6 +42,7 @@ struct TabLayout: View {
 
 struct TabLayout_Previews: PreviewProvider {
     static var previews: some View {
-        TabLayout()
+        TabLayout().environmentObject(SessionStore())
+        
     }
 }
