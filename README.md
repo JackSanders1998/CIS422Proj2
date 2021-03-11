@@ -12,8 +12,21 @@ Ronny Fuentes, Kyra Novitzky, Jack Sanders, Stephanie Schofield, Callista West
 
 Last modified March 11, 2021
 
+<<<<<<< Updated upstream
 ## Installation
 
 ### For Mac users:
 
 `pip install xcode'
+=======
+## Installation:
+
+### For Mac users:
+
+Download [XCode] (https://developer.apple.com/xcode/)  
+After downloading XCode, open terminal and run:  
+`sudo gem install cocoapods`
+
+Then: 
+`git pull "https://github.com/JackSanders1998/CIS422Proj2/tree/main/Fetch" `
+>>>>>>> Stashed changes
