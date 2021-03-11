@@ -72,6 +72,19 @@ struct ProfileView: View {
                     .padding(.trailing, 20)
                     .padding(.top, 15)
                     
+                    HStack {
+                        Text("Weight:").padding(.trailing, 20)
+                            .foregroundColor(.white)
+                            .padding(.all, 4)
+                        TextField("", text: self.$userSettings.dogname).foregroundColor(.black)
+                    }.padding()
+                    .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                    .cornerRadius(50)
+                    .opacity(0.9)
+                    .padding(.leading, 20)
+                    .padding(.trailing, 20)
+                    .padding(.top, 15)
+                    
 //                    HStack {
 //                        Int("Age:").padding(.trailing, 20)
 //                            .foregroundColor(.white)
@@ -104,7 +117,8 @@ struct ProfileView: View {
                             ["Owner": "\(userSettings.name)" as NSString,
                              "Dogname": "\(userSettings.dogname)" as NSString,
                              "Breed": "\(userSettings.breed)" as NSString,
-                             
+                             "Age": "\(userSettings.age)" as NSString,
+                             "Weight": "\(userSettings.weight)" as NSString,
                             ]
                         database.child("Users").child("\(currentUser)").setValue(object)
     
