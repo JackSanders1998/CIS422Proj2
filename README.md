@@ -6,15 +6,13 @@ Links: [User Documentation] (link), [Developer Documentation] (link), [Install I
 
 ## Authors:
 
-CIS 422 @ University of Oregon
-Fetch Team
-Ronny Fuentes, Kyra Novitzky, Jack Sanders, Stephanie Schofield, Callista West
+CIS 422 @ University of Oregon  
+Fetch Team  
+Ronny Fuentes, Kyra Novitzky, Jack Sanders, Stephanie Schofield, Callista West  
 
 Last modified March 11, 2021
 
 ## Installation
-
----
 
 ### For Mac users:
 
