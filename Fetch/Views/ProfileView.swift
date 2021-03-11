@@ -8,19 +8,18 @@ import SwiftUI
 import FirebaseDatabase
 import Firebase
 
-
-
 struct ProfileView: View {
     @State var name = ""
     @State var email = ""
     @State var dogname = ""
-    @State var breed = ""
     @State var userSettings = UserSettings()
     private let database = Database.database().reference()
     @EnvironmentObject var session: SessionStore
     
     @State private var selection = 0
+    var titleColor = Color(#colorLiteral(red: 0.7638114691, green: 0.2832764089, blue: 0.7193431258, alpha: 1))
     var backgroundColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
+    var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
     var profileUIColor = UIColor(red: 0.75, green: 0.18, blue: 0.87, alpha: 1.00)
     init() {
         let navBarAppearance = UINavigationBar.appearance()
@@ -29,78 +28,88 @@ struct ProfileView: View {
     }
     var body: some View {
         NavigationView {
-            VStack {
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [Color.white]),
+                               startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea(.all)
                 VStack {
-                    HStack {
-                        Text("Name:").padding(.trailing, 20)
-                            .foregroundColor(.white)
-                            .padding(.all, 4)
-                        TextField("", text: $userSettings.name).foregroundColor(.black)
-                    }.padding()
-                    .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
-                    .cornerRadius(50)
-                    .opacity(0.9)
-                    .padding(.leading, 20)
-                    .padding(.trailing, 20)
-                    .padding(.top, 15)
-                    
-                    HStack {
-                        Text("Dog Name:").padding(.trailing, 20)
-                            .foregroundColor(.white)
-                            .padding(.all, 4)
-                        TextField("", text: self.$userSettings.dogname).foregroundColor(.black)
-                    }.padding()
-                    .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
-                    .cornerRadius(50)
-                    .opacity(0.9)
-                    .padding(.leading, 20)
-                    .padding(.trailing, 20)
-                    .padding(.top, 15)
-                    
-                    HStack {
-                        Text("Breed:").padding(.trailing, 20)
-                            .foregroundColor(.white)
-                            .padding(.all, 4)
-                        TextField("", text: self.$userSettings.breed).foregroundColor(.black)
-                    }.padding()
-                    .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
-                    .cornerRadius(50)
-                    .opacity(0.9)
-                    .padding(.leading, 20)
-                    .padding(.trailing, 20)
-                    .padding(.top, 15)
-                    
-                    
-                    // Add User info to our database (Firebase)
-                    Button(action: {
+                    VStack {
+                        HStack {
+                            Text("Name:").padding(.trailing, 20)
+                                .foregroundColor(.white)
+                                .padding(.all, 4)
+                            TextField("", text: $userSettings.name).foregroundColor(.white)
+                        }.padding()
+                        .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                        .cornerRadius(50)
+                        .opacity(0.9)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 20)
+                        .padding(.top, 15)
                         
-                        var currentUser: String {
-                            var result: String
-                            let temp = Auth.auth().currentUser
-                            if (temp?.email != nil) {
-                                result = temp!.uid
-                            } else {
-                                result = "nil"
+                        HStack {
+                            Text("Dog Name:").padding(.trailing, 20)
+                                .foregroundColor(.white)
+                                .padding(.all, 4)
+                            TextField("", text: self.$userSettings.dogname).foregroundColor(.white)
+                        }.padding()
+                        .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                        .cornerRadius(50)
+                        .opacity(0.9)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 20)
+                        .padding(.top, 15)
+                        
+                        HStack {
+                            Text("Breed:").padding(.trailing, 20)
+                                .foregroundColor(.white)
+                                .padding(.all, 4)
+                            TextField("", text: self.$userSettings.breed).foregroundColor(.white)
+                        }.padding()
+                        .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                        .cornerRadius(50)
+                        .opacity(0.9)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 20)
+                        .padding(.top, 15)
+                        
+                        
+                        // Add User info to our database (Firebase)
+                        Button(action: {
+                            
+                            var currentUser: String {
+                                var result: String
+                                let temp = Auth.auth().currentUser
+                                if (temp?.email != nil) {
+                                    result = temp!.uid
+                                } else {
+                                    result = "nil"
+                                }
+                                return result
                             }
-                            return result
-                        }
-                        
-                        let object: [String: NSString] =
-                            ["Owner": "\(userSettings.name)" as NSString, "Dogname": "\(userSettings.dogname)" as NSString, "Breed": "\(userSettings.breed)" as NSString]
-                        database.child("Users").child("\(currentUser)").setValue(object)
-    
+                            
+                            let object: [String: NSString] =
+                                ["Owner": userSettings.name as NSString,
+                                 "Dogname": userSettings.dogname as NSString,
+                                 "Breed": userSettings.breed as NSString]
+                            database.child("Users").child(currentUser).setValue(object)
+        
 
-                    }) {
-                        Text("update")
-                            .padding(.leading, 270)
-                       }
-                }
+                        }) {
+                            Text("update")
+                                .bold()
+                                .padding(.leading, 270)
+                                
+                                .foregroundColor(titleColor)
+                           }
+                    }
 
-                Spacer()
-            }.navigationBarTitle("Profile")
-             .navigationBarItems(trailing: Button(action: session.signOut) {
-                Text("Sign out")
-            })
+                    Spacer()
+                }.navigationBarTitle("Profile")
+                 .navigationBarItems(trailing: Button(action: session.signOut) {
+                    Text("Sign out")
+             })
+            }
             
         }
     }

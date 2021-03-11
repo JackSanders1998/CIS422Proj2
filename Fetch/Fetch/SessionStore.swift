@@ -46,7 +46,25 @@ class SessionStore: ObservableObject {
             Auth.auth().removeStateDidChangeListener(handle)
         }
     }
-    
+    func getUserInfo(onSuccess: @escaping () -> Void, onError: @escaping (_ error: Error?) -> Void) {
+        let ref = Database.database().reference()
+        let defaults = UserDefaults.standard
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("User not found")
+            return
+        }
+        ref.child("Users").child(uid).observe(.value, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String : Any] {
+                let Owner = dictionary["Owner"] as! String
+                let Dogname = dictionary["Dogname"] as! String
+                defaults.set(Owner, forKey: "OwnerKey")
+                defaults.set(Dogname, forKey: "DogKey")
+                onSuccess()
+            }
+        }) { (error) in
+            onError(error)
+        }
+    }
     deinit {
         unbind()
     }

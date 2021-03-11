@@ -18,7 +18,6 @@ struct signinview: View {
     var titleColor = Color(#colorLiteral(red: 0.6689291596, green: 0.2796352208, blue: 0.6291314363, alpha: 1))
     var customButtonColor = Color(#colorLiteral(red: 0.7638114691, green: 0.2832764089, blue: 0.7193431258, alpha: 1))
     
-
     func signIn() {
         session.signIn(email: email, password: password) { (result, error) in
             if let error = error {
@@ -75,13 +74,13 @@ struct signinview: View {
                                     .foregroundColor(customButtonColor)
                             }
                         // Check's if password was supplied
-                        VStack {
+                    }
+                    VStack {
                         if (error != "") {
                             Text(error)
                                 .font(.system(size:15, weight: .semibold))
                                 .foregroundColor(.red)
                                 .padding()
-                        }
                         }
                     }
                     Spacer()
@@ -90,7 +89,6 @@ struct signinview: View {
                         HStack {
                             Text("Create an account")
                         }
-                    
                     }
                 }.padding(.horizontal, 20)
             }
@@ -102,7 +100,6 @@ struct CreateAccountView: View {
     @State var email = ""
     @State var password = ""
     @State var error = ""
-    
     var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
     var customButtonColor = Color(#colorLiteral(red: 0.7182822824, green: 0.2634641826, blue: 0.6803607941, alpha: 1))
     @EnvironmentObject var session: SessionStore
@@ -120,7 +117,7 @@ struct CreateAccountView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.white, customColor]),
+            LinearGradient(gradient: Gradient(colors: [customColor,Color.white]),
              startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea(.all)
             VStack {
@@ -162,7 +159,7 @@ struct CreateAccountView: View {
                         .overlay(RoundedRectangle(cornerRadius: 40)
                             .stroke(customButtonColor, lineWidth: 5))
                 }.padding(.bottom, 120)
-                
+            
                 if (error != "") {
                     Text(error)
                         .foregroundColor(.red)
@@ -170,7 +167,6 @@ struct CreateAccountView: View {
                 }
             }.padding(.horizontal, 20)
         }
-        
     }
 }
 
