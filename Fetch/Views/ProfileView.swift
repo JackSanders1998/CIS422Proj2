@@ -103,32 +103,7 @@ struct ProfileView: View {
         }
     }
 }
-/*
-class UserSettings: ObservableObject {
-    @Published var name: String {
-        didSet {
-            UserDefaults.standard.set(name, forKey: "name")
-        }
-    }
-    
-    @Published var breed: String {
-        didSet {
-            UserDefaults.standard.set(breed, forKey: "breed")
-        }
-    }
-    
-    @Published var dogname: String {
-        didSet {
-            UserDefaults.standard.set(dogname, forKey: "dogname")
-        }
-    }
-    init() {
-        self.name = UserDefaults.standard.object(forKey: "name") as? String ?? ""
-        self.breed = UserDefaults.standard.object(forKey: "breed") as? String ?? ""
-        self.dogname = UserDefaults.standard.object(forKey: "dogname") as? String ?? ""
-    }
-}
-*/
+
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView().environmentObject(SessionStore())

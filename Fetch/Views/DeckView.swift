@@ -6,23 +6,32 @@
 //
 
 import SwiftUI
-import FirebaseDatabase
 import Firebase
-
-var owner: String = "Kyra"
-var dogname: String = "Gus"
-var breed: String = "Shepard"
-var uid: String = "123"
-
-var curr_owner: String = ""
-var curr_dogname: String = ""
-var curr_breed: String = ""
-var curr_uid: String = ""
+import FirebaseDatabase
+import Foundation
 
 struct DeckView: View {
+    @State public var owner: String = "nil"
+    @State public var dogname: String = "nil"
+    @State public var breed: String = "nil"
+    @State public var uid: String = "nil"
     
-    let user_ref = Database.database().reference().child("Users")
+    @State public var curr_owner: String = ""
+    @State public var curr_dogname: String = ""
+    @State public var curr_breed: String = ""
+    @State public var curr_uid: String = ""
+    
+    @State public var userarray = [""]
+    @State public var breedarray = [""]
+    @State public var dognamearray = [""]
+    @State var temp = "Press update to start viewing dogs"
+    @State var temp1 = ""
+    @State var temp2 = ""
+    @State var count: Int = 0
+    
+    //Figuring out who the current user is
     var currentUser: String {
+        let user_ref = Database.database().reference().child("Users")
         var result: String
         let temp = Auth.auth().currentUser
         if (temp?.email != nil) {
@@ -33,7 +42,7 @@ struct DeckView: View {
         user_ref.observe(.value, with: {snapshot in
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 let userDict = child.value as! [String: Any]
-                uid = userDict["UID"] as! String
+                self.uid = userDict["UID"] as! String
                 if result == currentUser {
                     curr_owner = userDict["Owner"] as! String
                     curr_dogname = userDict["Dogname"] as! String
@@ -44,48 +53,141 @@ struct DeckView: View {
         })
         return result
     }
+    
+    let database = Database.database().reference()
+    
+    func match(){
 
-    func display_profile() -> Any{
-        user_ref.observe(.value, with: {snapshot in
+        if count == 0 {
+            self.count += 1
+            self.temp = userarray[count]
+            self.temp1 = dognamearray[count]
+            self.temp2 = breedarray[count]
+        }
+        else if count+1 <= userarray.count {
+            database.child("Matches").child("\(currentUser)").child("\(dognamearray[count])").setValue("\(dognamearray[count])")
+            
+            print("count = \(count)")
+            print("User: \(userarray[count])")
+            print("Dog name: \(dognamearray[count])")
+            print("Breed: \(breedarray[count])")
+            //print("User: \(userarray[4])")
+            print("------------")
+            self.count += 1
+            if count < userarray.count{
+                self.temp = userarray[count]
+                self.temp1 = dognamearray[count]
+                self.temp2 = breedarray[count]
+                //self.temp = userarray[count%3]
+                //self.count += 1
+            }
+        }
+        if count >= userarray.count {
+            self.temp = "End of Deck"
+            self.temp1 = ""
+            self.temp2 = ""
+        }
+    }
+    
+
+    func decline(){
+
+        if count == 0 {
+            self.count += 1
+            self.temp = userarray[count]
+            self.temp1 = dognamearray[count]
+            self.temp2 = breedarray[count]
+        }
+        else if count+1 <= userarray.count {
+            database.child("Declines").child("\(currentUser)").child("\(dognamearray[count])").setValue("\(dognamearray[count])")
+            
+            print("count = \(count)")
+            print("User: \(userarray[count])")
+            print("Dog name: \(dognamearray[count])")
+            print("Breed: \(breedarray[count])")
+            //print("User: \(userarray[4])")
+            print("------------")
+            self.count += 1
+            if count < userarray.count{
+                self.temp = userarray[count]
+                self.temp1 = dognamearray[count]
+                self.temp2 = breedarray[count]
+                //self.temp = userarray[count%3]
+                //self.count += 1
+            }
+        }
+        if count >= userarray.count {
+            self.temp = "End of Deck"
+            self.temp1 = ""
+            self.temp2 = ""
+        }
+    }
+    
+    //var count = 0
+    func display_profile(){
+        let dis_user_ref = Database.database().reference().child("Users")
+        dis_user_ref.observe(.value, with: {snapshot in
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 let userDict = child.value as! [String: Any]
-                //print(child.value ?? "")
                 owner = userDict["Owner"] as! String
                 dogname = userDict["Dogname"] as! String
                 breed = userDict["Breed"] as! String
                 uid = userDict["UID"] as! String
+                
+                //If current user, don't print
                 if uid == currentUser {
                     print("Found current user, Name = \(owner)")
                     print("-----------------------")
                     continue
                 }
+                
                 else {
-                    //print("Current user is: \(currentUser)")
-                    print("")
-                    print("Meet \(dogname)!, a \(breed)")
-                    print("Whose owner is \(owner)")
-                    //print("(user id is \(uid))")
-                    //print("Dog's Name = \(dogname)")
-                    print("-----------------------")
+                    print("Owner = \(owner)")
+                    print("Dog's name = \(dogname)")
+                    print("Breed = \(breed)")
+                    print("-----------------")
+                    self.userarray.append(owner)
+                    self.dognamearray.append(dogname)
+                    self.breedarray.append(breed)
                 }
             }
         })
-        return 1
     }
-        
+    
     var body: some View {
+        
         NavigationView {
             VStack {
                 VStack {
-                    //Text("Hey \(curr_owner) and \(curr_dogname)")
-                    Text("Meet \(owner)!")
-                Button(action: {
-                    print("inside button")
-                    display_profile()
-                    print("leaving button")
-                }) {
-                    Text("Let's Fetch!")
-                   }
+                    VStack {
+                        Text(self.temp)
+                        Text(self.temp1)
+                        Text(self.temp2)
+                    }
+                    Button(action: {
+                        display_profile()
+                    }){
+                        Text("update")
+                            .padding(.leading, 270)
+                    }.offset(x: -140, y: 330)
+                    Button(action: {
+                            match()
+                    }) {
+                        Text("Match")
+                            .foregroundColor(.green)
+                            .padding()
+                            .border(Color.green, width: 2)
+
+                    }.buttonStyle(BorderlessButtonStyle()).offset(x: -140, y: 230)
+                    Button(action: {
+                            decline()
+                    }) {
+                        Text("Decline")
+                            .foregroundColor(.red)
+                            .padding()
+                            .border(Color.red, width: 2)
+
+                    }.buttonStyle(BorderlessButtonStyle()).offset(x: 135, y: 170)
                 }.navigationTitle("Potential Friends")
             }
         }
