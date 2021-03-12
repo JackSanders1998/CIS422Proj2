@@ -97,7 +97,7 @@ struct ProfileView: View {
                     .padding(.leading, 20)
                     .padding(.trailing, 20)
                     .padding(.top, 15)
-                    
+        
                     // Add User info to our database (Firebase)
                     Button(action: {
                         
