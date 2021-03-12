@@ -15,8 +15,8 @@ struct ProfileView: View {
     @State var email = ""
     @State var dogname = ""
     @State var breed = ""
-    @State var weight = 0
-    @State var age = 0
+    @State var weight = ""
+    @State var age = ""
     @State var userSettings = UserSettings()
     private let database = Database.database().reference()
     @EnvironmentObject var session: SessionStore
@@ -73,10 +73,10 @@ struct ProfileView: View {
                     .padding(.top, 15)
                     
                     HStack {
-                        Text("Weight:").padding(.trailing, 20)
+                        Text("Age:").padding(.trailing, 20)
                             .foregroundColor(.white)
                             .padding(.all, 4)
-                        TextField("", text: self.$userSettings.dogname).foregroundColor(.black)
+                        TextField("", text: self.$userSettings.age).foregroundColor(.black)
                     }.padding()
                     .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
                     .cornerRadius(50)
@@ -85,19 +85,18 @@ struct ProfileView: View {
                     .padding(.trailing, 20)
                     .padding(.top, 15)
                     
-//                    HStack {
-//                        Int("Age:").padding(.trailing, 20)
-//                            .foregroundColor(.white)
-//                            .padding(.all, 4)
-//                        TextField(0, int: self.$userSettings.age).foregroundColor(.black)
-//                    }.padding()
-//                    .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
-//                    .cornerRadius(50)
-//                    .opacity(0.9)
-//                    .padding(.leading, 20)
-//                    .padding(.trailing, 20)
-//                    .padding(.top, 15)
-                    
+                    HStack {
+                        Text("Weight:").padding(.trailing, 20)
+                            .foregroundColor(.white)
+                            .padding(.all, 4)
+                        TextField("", text: self.$userSettings.weight).foregroundColor(.black)
+                    }.padding()
+                    .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                    .cornerRadius(50)
+                    .opacity(0.9)
+                    .padding(.leading, 20)
+                    .padding(.trailing, 20)
+                    .padding(.top, 15)
                     
                     // Add User info to our database (Firebase)
                     Button(action: {
@@ -158,12 +157,12 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(dogname, forKey: "dogname")
         }
     }
-    @Published var age: Int {
+    @Published var age: String {
         didSet {
             UserDefaults.standard.set(age, forKey: "age")
         }
     }
-    @Published var weight: Int {
+    @Published var weight: String {
         didSet {
             UserDefaults.standard.set(weight, forKey: "weight")
         }
@@ -172,8 +171,8 @@ class UserSettings: ObservableObject {
         self.name = UserDefaults.standard.object(forKey: "name") as? String ?? ""
         self.breed = UserDefaults.standard.object(forKey: "breed") as? String ?? ""
         self.dogname = UserDefaults.standard.object(forKey: "dogname") as? String ?? ""
-        self.age = UserDefaults.standard.object(forKey: "age") as? Int ?? 0
-        self.weight = UserDefaults.standard.object(forKey: "weight") as? Int ?? 0
+        self.age = UserDefaults.standard.object(forKey: "age") as? String ?? ""
+        self.weight = UserDefaults.standard.object(forKey: "weight") as? String ?? ""
 
     }
 }
