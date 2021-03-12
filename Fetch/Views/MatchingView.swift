@@ -16,10 +16,10 @@ struct MatchingView: View {
     @State public var curr_breed: String = ""
     @State public var curr_uid: String = ""
     
-    @State public var matcharray = [""]
+    @State public var matcharray = []
     
     //Figuring out who the current user is
-    var currentUser: String {
+    var matches_currentUser: String {
         let user_ref = Database.database().reference().child("Users")
         var result: String
         let temp = Auth.auth().currentUser
@@ -31,7 +31,7 @@ struct MatchingView: View {
         user_ref.observe(.value, with: {snapshot in
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 let userDict = child.value as! [String: Any]
-                if result == currentUser {
+                if result == matches_currentUser {
                     curr_owner = userDict["Owner"] as! String
                     curr_dogname = userDict["Dogname"] as! String
                     curr_breed = userDict["Breed"] as! String
@@ -44,22 +44,26 @@ struct MatchingView: View {
     }
     
     //var count = 0
-    func display_profile(){
+    func matches_display_profile(){
+        matcharray = []
         let dis_user_ref = Database.database().reference().child("Matches")
         dis_user_ref.observe(.value, with: {snapshot in
             for child in snapshot.children.allObjects as! [DataSnapshot] {
-                let userDict = Array(child.value)
-                print(userDict)
-                if child.key == currentUser {
-                    //let children = Array(child.values)
-                    //print(child.value as! String)
+                //print("value = \(value)")
+                if child.key == matches_currentUser {
+                    print("Found current user, locating matches...")
+                    let childcount = child.childrenCount
+                    for match in 1..<childcount+1 {
+                        //print(child.childSnapshot(forPath: "\(match)").value!)
+                        let tempmatch: NSString = child.childSnapshot(forPath: "\(match)").value as! NSString
+                        //print(tempmatch)
+                        let newtempmatch: String = tempmatch as String
+                        //print("newtempmatch: \(newtempmatch)")
+                        //print(type(of: child.childSnapshot(forPath: "\(match)").value!))
+                        matcharray.append(newtempmatch)
+                    }
+                    //var data = child.val()
                 }
-                //if userDict["UID"] as! String == curr_uid {
-                    //for match in userDict {
-                      //  print(match.value)
-                        //self.matcharray.append(match.value as! String)
-                    //}
-                //}
             }
         })
     }
@@ -68,14 +72,19 @@ struct MatchingView: View {
             VStack {
                 VStack {
                     Button(action: {
-                        display_profile()
+                        matches_display_profile()
+                        let secondsToDelay = 0.7
+                        DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+                            //print(matcharray.count)
+                            print(matcharray)
+                        }
                     }){
                         Text("update")
                             .padding(.leading, 270)
                     }
                 }
             }
-        }
+    }
 }
 
 struct MatchingView_Previews: PreviewProvider {

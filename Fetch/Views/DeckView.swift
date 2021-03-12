@@ -31,6 +31,9 @@ struct DeckView: View {
     @State var temp2 = ""
     @State var count: Int = 0
     
+    @State var matches_count: Int = 1
+    @State var declines_count: Int = 1
+    
     @State public var more: String = "Show me some dogs!"
     
     //Figuring out who the current user is
@@ -69,8 +72,8 @@ struct DeckView: View {
             self.temp2 = breedarray[count]
         }
         else if count+1 <= userarray.count {
-            database.child("Matches").child("\(currentUser)").child("\(count)").setValue("\(dognamearray[count])")
-            
+            database.child("Matches").child("\(currentUser)").child("\(matches_count)").setValue("\(dognamearray[count])")
+            matches_count+=1
             print("count = \(count)")
             print("User: \(userarray[count])")
             print("Dog name: \(dognamearray[count])")
@@ -103,8 +106,8 @@ struct DeckView: View {
             self.temp2 = breedarray[count]
         }
         else if count+1 <= userarray.count {
-            database.child("Declines").child("\(currentUser)").child("\(count)").setValue("\(dognamearray[count])")
-            
+            database.child("Declines").child("\(currentUser)").child("\(declines_count)").setValue("\(dognamearray[count])")
+            declines_count += 1
             print("count = \(count)")
             print("User: \(userarray[count])")
             print("Dog name: \(dognamearray[count])")
