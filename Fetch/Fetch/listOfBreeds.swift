@@ -7,6 +7,7 @@
 
 import Foundation
 
+var activity = ["Shy", "Social", "Reactive"]
 
 var allBreeds = ["Affenpinscher",
 "Afghan Hound",

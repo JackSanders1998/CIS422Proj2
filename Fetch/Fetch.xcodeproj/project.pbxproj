@@ -20,6 +20,7 @@
 		B573E4D5FEB48D4D16151BEE /* Pods_Fetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6C22C65A4A3BF4E26B54D0 /* Pods_Fetch.framework */; };
 		E31022B225FA77B7001C2CD9 /* testingDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31022B125FA77B7001C2CD9 /* testingDB.swift */; };
 		E31BC98225FA9BD900C3D16B /* listOfBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31BC98125FA9BD900C3D16B /* listOfBreeds.swift */; };
+		E31BC98725FACC3700C3D16B /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31BC98625FACC3700C3D16B /* ProfilePage.swift */; };
 		E326534C25F070C000A9222C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326534B25F070C000A9222C /* SettingView.swift */; };
 		E326535125F070CB00A9222C /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326535025F070CB00A9222C /* MatchingView.swift */; };
 		E326535625F0722900A9222C /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326535525F0722900A9222C /* DeckView.swift */; };
@@ -80,6 +81,7 @@
 		8E6FDBA7369E0E45AA059EE8 /* Pods-Fetch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fetch.release.xcconfig"; path = "Target Support Files/Pods-Fetch/Pods-Fetch.release.xcconfig"; sourceTree = "<group>"; };
 		E31022B125FA77B7001C2CD9 /* testingDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testingDB.swift; sourceTree = "<group>"; };
 		E31BC98125FA9BD900C3D16B /* listOfBreeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listOfBreeds.swift; sourceTree = "<group>"; };
+		E31BC98625FACC3700C3D16B /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		E326534B25F070C000A9222C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		E326535025F070CB00A9222C /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
 		E326535525F0722900A9222C /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				E326535525F0722900A9222C /* DeckView.swift */,
 				E377356025F7090E00A7F821 /* ContentView.swift */,
 				E3BA6F1325F840A800F81F86 /* Authentication.swift */,
+				E31BC98625FACC3700C3D16B /* ProfilePage.swift */,
 				E31022B125FA77B7001C2CD9 /* testingDB.swift */,
 			);
 			path = Views;
@@ -504,6 +507,7 @@
 				E377355C25F7047700A7F821 /* SessionStore.swift in Sources */,
 				E377356625F709D100A7F821 /* AuthenView.swift in Sources */,
 				E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */,
+				E31BC98725FACC3700C3D16B /* ProfilePage.swift in Sources */,
 				E31BC98225FA9BD900C3D16B /* listOfBreeds.swift in Sources */,
 				E326535625F0722900A9222C /* DeckView.swift in Sources */,
 				E326536225F151FA00A9222C /* TabLayout.swift in Sources */,

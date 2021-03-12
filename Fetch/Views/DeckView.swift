@@ -22,7 +22,7 @@ struct DeckView: View {
     @State private var previewIndex = 0
     @State private var selection = 1
 
-    var activity = ["Shy", "Social", "Reactive"]
+    
     var titleColor = Color(#colorLiteral(red: 0.6689291596, green: 0.2796352208, blue: 0.6291314363, alpha: 1))
     var body: some View {
         
@@ -52,7 +52,7 @@ struct DeckView: View {
                         TextField("Weight", text: $weight)
                         Picker(selection: $previewIndex, label: Text("Personality")) {
                                 ForEach(0 ..< activity.count) {
-                                    Text(self.activity[$0])
+                                    Text(activity[$0])
                                 }
                         }
                     }
