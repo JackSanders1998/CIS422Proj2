@@ -172,7 +172,7 @@ struct ProfileView: View {
                                     .fontWeight(.bold)
                                     .padding(10)
                                     .background(titleColor)
-                                    .cornerRadius(20)
+                                    .cornerRadius(10)
                                     .foregroundColor(.white)
                                     .padding(5)
                                     .padding(.top, 10)
@@ -199,9 +199,15 @@ struct ProfileView: View {
                     imagePicker(isVisible: $isShown, image: $image, sourceType: sourceType)
                 }
             }
-            .navigationBarTitle("Profile")
-            .navigationBarItems(trailing: Button(action: session.signOut) {
+            .navigationBarItems(
+                leading: Text("Profile")
+                    .foregroundColor(titleColor)
+                    .font(.system(size:35))
+                    .bold(),
+                trailing: Button(action: session.signOut) {
                Text("Sign out")
+                .font(.system(size: 20))
+                .bold()
             })
             
             

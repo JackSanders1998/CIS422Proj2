@@ -187,6 +187,8 @@ import FirebaseDatabase
 import Foundation
 
 struct HomeView: View {
+    var profileUIColor = UIColor(red: 0.75, green: 0.18, blue: 0.87, alpha: 1.00)
+    var titleColor = Color(#colorLiteral(red: 0.6261639836, green: 0.2293635575, blue: 0.5936303033, alpha: 1))
     var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
     @State public var owner: String = "nil"
     @State public var dogname: String = "nil"
@@ -209,8 +211,14 @@ struct HomeView: View {
     
     @State var matches_count: Int = 1
     @State var declines_count: Int = 1
-    
     @State public var more: String = "Show me some dogs!"
+    
+    
+    init() {
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: profileUIColor]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
     
     //Figuring out who the current user is
     var currentUser: String {
@@ -406,15 +414,20 @@ struct HomeView: View {
                                     .cornerRadius(50)
                             }
                         }.padding(.bottom, 30)
-                        .navigationBarItems(trailing:
-                            Image(systemName:"bubble.left.and.bubble.right.fill")
+                        .navigationBarItems(
+                            leading: Text("Deck")
+                                .foregroundColor(titleColor)
+                                .font(.system(size:35))
+                                .bold(),
+                            trailing: Image(systemName:"bubble.left.and.bubble.right.fill")
                                 .foregroundColor(customColor)
                                 .font(Font.system(size: 30, weight: .bold))
                                 .padding(.leading, 25)
                                 .foregroundColor(.white)
                                 .scaledToFill()
                             )
-//                        .navigationTitle("Potential Friends")
+                        
+//                    }.navigationTitle("Matching")
                     }
                 }
             }
