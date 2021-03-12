@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DeckView: View {
+struct deckView: View {
 //    @State var nameInEditMode = false
 //    @State var dognameInEditMode = false
 //    @State var breedInEditMode = false
@@ -56,22 +56,22 @@ struct DeckView: View {
                                 }
                         }
                     }
-                    VStack {
-                    Button(action: {
-                        DeckView()
-                    }) {
-                        Text("Save")
-                            .fontWeight(.bold)
-                            .padding(.all, 17)
-                            .background(Color.purple)
-                            .cornerRadius(30)
-                            .foregroundColor(.white)
-                            .overlay(
-                             RoundedRectangle(cornerRadius: 30)
-                                .stroke(Color.purple, lineWidth: 5))
-                            .padding(.leading, 230)
-                       }
-                    }.listRowBackground(Color(UIColor.systemGroupedBackground))
+//                    VStack {
+//                    Button(action: {
+//                        DeckView()
+//                    }) {
+//                        Text("Save")
+//                            .fontWeight(.bold)
+//                            .padding(.all, 17)
+//                            .background(Color.purple)
+//                            .cornerRadius(30)
+//                            .foregroundColor(.white)
+//                            .overlay(
+//                             RoundedRectangle(cornerRadius: 30)
+//                                .stroke(Color.purple, lineWidth: 5))
+//                            .padding(.leading, 230)
+//                       }
+//                    }.listRowBackground(Color(UIColor.systemGroupedBackground))
                 }
             }
 
@@ -221,8 +221,8 @@ struct DeckView: View {
 //    }
 //}
 
-struct DeckView_Previews: PreviewProvider {
+struct deckView_Previews: PreviewProvider {
     static var previews: some View {
-        DeckView()
+        deckView()
     }
 }

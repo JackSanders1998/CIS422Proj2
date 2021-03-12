@@ -21,7 +21,7 @@ struct TabLayout: View {
                 .navigationBarBackButtonHidden(true)
                 .navigationBarHidden(true)
             
-            DeckView()
+            HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }

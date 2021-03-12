@@ -23,7 +23,7 @@
 		E31BC98725FACC3700C3D16B /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31BC98625FACC3700C3D16B /* ProfilePage.swift */; };
 		E326534C25F070C000A9222C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326534B25F070C000A9222C /* SettingView.swift */; };
 		E326535125F070CB00A9222C /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326535025F070CB00A9222C /* MatchingView.swift */; };
-		E326535625F0722900A9222C /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326535525F0722900A9222C /* DeckView.swift */; };
+		E326535625F0722900A9222C /* deckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326535525F0722900A9222C /* deckView.swift */; };
 		E326536225F151FA00A9222C /* TabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326536125F151FA00A9222C /* TabLayout.swift */; };
 		E33DCA0E25E72075007DEDA9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */; };
 		E34CC86425F02F2100F1EEEE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CC86325F02F2100F1EEEE /* LoginView.swift */; };
@@ -32,6 +32,7 @@
 		E377356125F7090E00A7F821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377356025F7090E00A7F821 /* ContentView.swift */; };
 		E377356625F709D100A7F821 /* AuthenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377356525F709D100A7F821 /* AuthenView.swift */; };
 		E377356B25F81D9C00A7F821 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377356A25F81D9C00A7F821 /* SignUpScreen.swift */; };
+		E3AF99BE25FB3A1000CF0275 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AF99BD25FB3A1000CF0275 /* HomeView.swift */; };
 		E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */; };
 		E3B2EE0C25E8826A00F8BC06 /* JoinedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */; };
 		E3BA6F1425F840A800F81F86 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA6F1325F840A800F81F86 /* Authentication.swift */; };
@@ -84,7 +85,7 @@
 		E31BC98625FACC3700C3D16B /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		E326534B25F070C000A9222C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		E326535025F070CB00A9222C /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
-		E326535525F0722900A9222C /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		E326535525F0722900A9222C /* deckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deckView.swift; sourceTree = "<group>"; };
 		E326536125F151FA00A9222C /* TabLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabLayout.swift; sourceTree = "<group>"; };
 		E33DCA0D25E72075007DEDA9 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		E34CC83225EAF5E700F1EEEE /* Fetch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fetch.entitlements; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		E377356025F7090E00A7F821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E377356525F709D100A7F821 /* AuthenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenView.swift; sourceTree = "<group>"; };
 		E377356A25F81D9C00A7F821 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		E3AF99BD25FB3A1000CF0275 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedUsers.swift; sourceTree = "<group>"; };
 		E3BA6F1325F840A800F81F86 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
@@ -219,10 +221,9 @@
 				E326536125F151FA00A9222C /* TabLayout.swift */,
 				E34CC86825F04C9000F1EEEE /* ProfileView.swift */,
 				E326535025F070CB00A9222C /* MatchingView.swift */,
-				E326535525F0722900A9222C /* DeckView.swift */,
 				E377356025F7090E00A7F821 /* ContentView.swift */,
 				E3BA6F1325F840A800F81F86 /* Authentication.swift */,
-				E31BC98625FACC3700C3D16B /* ProfilePage.swift */,
+				E3AF99BD25FB3A1000CF0275 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +239,8 @@
 		E3812E9025F857BE0078771A /* Playground */ = {
 			isa = PBXGroup;
 			children = (
+				E31BC98625FACC3700C3D16B /* ProfilePage.swift */,
+				E326535525F0722900A9222C /* deckView.swift */,
 				E31022B125FA77B7001C2CD9 /* testingDB.swift */,
 				E34CC86325F02F2100F1EEEE /* LoginView.swift */,
 				E326534B25F070C000A9222C /* SettingView.swift */,
@@ -495,6 +498,7 @@
 				E326534C25F070C000A9222C /* SettingView.swift in Sources */,
 				E34CC86925F04C9000F1EEEE /* ProfileView.swift in Sources */,
 				E3BA6F1425F840A800F81F86 /* Authentication.swift in Sources */,
+				E3AF99BE25FB3A1000CF0275 /* HomeView.swift in Sources */,
 				E31022B225FA77B7001C2CD9 /* testingDB.swift in Sources */,
 				041A09A625DF4E5B0068310A /* ViewController.swift in Sources */,
 				041A09A225DF4E5B0068310A /* AppDelegate.swift in Sources */,
@@ -509,7 +513,7 @@
 				E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */,
 				E31BC98725FACC3700C3D16B /* ProfilePage.swift in Sources */,
 				E31BC98225FA9BD900C3D16B /* listOfBreeds.swift in Sources */,
-				E326535625F0722900A9222C /* DeckView.swift in Sources */,
+				E326535625F0722900A9222C /* deckView.swift in Sources */,
 				E326536225F151FA00A9222C /* TabLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

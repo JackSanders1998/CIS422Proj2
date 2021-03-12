@@ -140,79 +140,17 @@ struct ProfilePage: View {
                             }
                         }
                         Section{
-//                            Button(action: {
-//                                var currentUser: String {
-//                                    var result: String
-//                                    let temp = Auth.auth().currentUser
-//                                    self.breed = allBreeds[previewIndex]
-//                                    if (temp?.email != nil) {
-//                                        result = temp!.uid
-//                                    } else {
-//                                        result = "nil"
-//                                    }
-//                                    return result
-//                                }
-//
-//                                let object: [String: NSString] =
-//                                 ["Owner": name as NSString,
-//                                  "Dogname": dogname as NSString,
-//                                  "Breed": breed as NSString,
-//                                  "UID": currentUser as NSString]
-//                                database.child("Users").child(currentUser).setValue(object)
-//
-//
-//                            }) {
-//                                Text("update")
-//                                    .bold()
-//                                    .padding(.leading, 250)
-//
-//                                    .foregroundColor(titleColor)
-//                               }
-//                        }
-//                        .listRowBackground(Color(.systemGroupedBackground))
-                        
                     }
-                    
-                    
-                
                 }
-//                }.navigationBarTitle("Profile")
                  .navigationBarItems(trailing: Button(action: session.signOut) {
                     Text("Sign out")
              })
-                
-            }
+                }
             }
         }
         
     }
 }
-
-// Struct below is used for perserving data in text fields
-//class UserSettings: ObservableObject {
-//    @Published var name: String {
-//        didSet {
-//            UserDefaults.standard.set(name, forKey: "name")
-//        }
-//    }
-//
-//    @Published var breed: String {
-//        didSet {
-//            UserDefaults.standard.set(breed, forKey: "breed")
-//        }
-//    }
-//
-//    @Published var dogname: String {
-//        didSet {
-//            UserDefaults.standard.set(dogname, forKey: "dogname")
-//        }
-//    }
-//    init() {
-//        self.name = UserDefaults.standard.object(forKey: "name") as? String ?? ""
-//        self.breed = UserDefaults.standard.object(forKey: "breed") as? String ?? ""
-//        self.dogname = UserDefaults.standard.object(forKey: "dogname") as? String ?? ""
-//    }
-//}
 
 struct ProfilePage_Previews: PreviewProvider {
     static var previews: some View {

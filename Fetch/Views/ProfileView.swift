@@ -6,6 +6,7 @@
 //
 import SwiftUI
 import FirebaseDatabase
+import FirebaseStorage
 import Firebase
 
 struct ProfileView: View {
@@ -96,32 +97,7 @@ struct ProfileView: View {
                             .padding(.trailing, 20)
                             .padding(.top, 15)
                             // Add User info to our database (Firebase)
-//                            Button(action: {
-//                                var currentUser: String {
-//                                    var result: String
-//                                    let temp = Auth.auth().currentUser
-//                                    if (temp?.email != nil) {
-//                                        result = temp!.uid
-//                                    } else {
-//                                        result = "nil"
-//                                    }
-//                                    return result
-//                                }
-//
-//                                let object: [String: NSString] =
-//                                    ["Owner": userSettings.name as NSString,
-//                                     "Dogname": userSettings.dogname as NSString,
-//                                     "UID": currentUser as NSString,
-//                                     "Breed": userSettings.breed as NSString]
-//                                database.child("Users").child(currentUser).setValue(object)
-//
-//                            }) {
-//                                Text("update")
-//                                    .bold()
-//                                    .padding(.leading, 270)
-//
-//                                    .foregroundColor(titleColor)
-//                               }
+
                         }
                         // STACK BELOW WILL INCLUDE PET BIO
                         VStack {
@@ -191,7 +167,6 @@ struct ProfileView: View {
                                      "UID": currentUser as NSString,
                                      "Breed": userSettings.breed as NSString]
                                 database.child("Users").child(currentUser).setValue(object)
-        
                             }) {
                                 Text("update")
                                     .fontWeight(.bold)
@@ -206,7 +181,6 @@ struct ProfileView: View {
                                }
                         }
                         Spacer()
-                        
                     }.actionSheet(isPresented: $showActionSheet, content: { () -> ActionSheet in
                         ActionSheet(title: Text("Select Image"), message: Text("Please select an image or take one"),
                                     buttons: [ActionSheet.Button.default(Text("Camera"), action: {
