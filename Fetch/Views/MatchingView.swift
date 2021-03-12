@@ -8,36 +8,32 @@ import UIKit
 import SwiftUI
 
 struct MatchingView: View {
-    @State private var isShowPhotoLibrary = false
-    @State private var image = UIImage()
-    
-        var body: some View {
-            VStack {
-     
-                Image(uiImage: self.image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .edgesIgnoringSafeArea(.all)
-     
-                Button(action: {
-                    self.isShowPhotoLibrary = true
-                }) {
-                    HStack {
-                        Image(systemName: "photo")
-                            .font(.system(size: 20))
-     
-                        Text("Photo library")
-                            .font(.headline)
-                    }
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-                    .padding(.horizontal)
-                    }
+    var matches = ["Kyra", "Steph", "Mike", "Al", "Jimmy", "Tyler"]
+    var dogs = ["Gus", "Rusty", "Jax", "Layla", "Max", "Brock"]
+    var emails = ["KyraN@gmail.com", "StephS@uoregon.edu", "MikeK@aol.com", "Al456@uoregon.edu", "JimmyT@gmail.com", "Tylerf@gmail.com"]
+    var profileUIColor = UIColor(red: 0.75, green: 0.18, blue: 0.87, alpha: 1.00)
+    var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
+    var body: some View {
+        
+            ZStack {
+                
+                NavigationView {
+                    
+                List(matches.indices) { item in
+                        VStack(alignment: .leading) {
+                            
+                            Text("Owner: \(matches[item])")
+                            Text("Email: \(emails[item])")
+                            Text("Pet: \(dogs[item])")
+                        }
+                }.navigationTitle("Matches")
+                    
+                    
             }
+                
+            
         }
+    }
 }
 
 

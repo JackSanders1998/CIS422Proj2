@@ -33,6 +33,7 @@
 		E377356625F709D100A7F821 /* AuthenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377356525F709D100A7F821 /* AuthenView.swift */; };
 		E377356B25F81D9C00A7F821 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E377356A25F81D9C00A7F821 /* SignUpScreen.swift */; };
 		E39B998025FBDA2A00874EA6 /* Callista_file.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39B997F25FBDA2A00874EA6 /* Callista_file.swift */; };
+		E3A9622125FBF808005D75C0 /* BioPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9622025FBF808005D75C0 /* BioPage.swift */; };
 		E3AF99BE25FB3A1000CF0275 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AF99BD25FB3A1000CF0275 /* HomeView.swift */; };
 		E3B2EE0425E8805300F8BC06 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */; };
 		E3B2EE0C25E8826A00F8BC06 /* JoinedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */; };
@@ -100,6 +101,7 @@
 		E377356525F709D100A7F821 /* AuthenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenView.swift; sourceTree = "<group>"; };
 		E377356A25F81D9C00A7F821 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		E39B997F25FBDA2A00874EA6 /* Callista_file.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callista_file.swift; sourceTree = "<group>"; };
+		E3A9622025FBF808005D75C0 /* BioPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPage.swift; sourceTree = "<group>"; };
 		E3AF99BD25FB3A1000CF0275 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E3B2EE0225E8805300F8BC06 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E3B2EE0B25E8826A00F8BC06 /* JoinedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedUsers.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				E377356025F7090E00A7F821 /* ContentView.swift */,
 				E3BA6F1325F840A800F81F86 /* Authentication.swift */,
 				E3AF99BD25FB3A1000CF0275 /* HomeView.swift */,
+				E3A9622025FBF808005D75C0 /* BioPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3A9622125FBF808005D75C0 /* BioPage.swift in Sources */,
 				E3C4302225F1C681002AC018 /* SignupView.swift in Sources */,
 				041A09AC25DF4E5B0068310A /* Fetch.xcdatamodeld in Sources */,
 				E39B998025FBDA2A00874EA6 /* Callista_file.swift in Sources */,

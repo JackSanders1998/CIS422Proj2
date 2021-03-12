@@ -356,8 +356,11 @@ struct HomeView: View {
                             Spacer()
                             deckPicture()
                             Text(self.temp)
+                                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                             Text(self.temp1)
+                                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                             Text(self.temp2)
+                                .foregroundColor(.blue)
                             Spacer()
                         }
                         HStack {
@@ -443,7 +446,7 @@ struct deckPicture: View {
                 }) {
                 RoundedRectangle(cornerRadius: 25)
                     .opacity(0.3)
-                    .frame(width: 390, height: 480, alignment: .center)
+                    .frame(width: 420, height: 480, alignment: .center)
                     .foregroundColor(cardColor)
                     .overlay(RoundedRectangle(cornerRadius: 30)
                         .frame(width: 36, height: 36, alignment: .center)
