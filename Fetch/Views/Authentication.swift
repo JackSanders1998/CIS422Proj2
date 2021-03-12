@@ -14,7 +14,7 @@ struct signinview: View {
     @State var password = ""
     @State var error = ""
     @EnvironmentObject var session: SessionStore
-    var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
+    var customColor = Color(#colorLiteral(red: 0.5209861398, green: 0.8415923715, blue: 0.9457578063, alpha: 1))
     var titleColor = Color(#colorLiteral(red: 0.6689291596, green: 0.2796352208, blue: 0.6291314363, alpha: 1))
     var customButtonColor = Color(#colorLiteral(red: 0.7638114691, green: 0.2832764089, blue: 0.7193431258, alpha: 1))
     
@@ -103,8 +103,8 @@ struct CreateAccountView: View {
     @State var password = ""
     @State var error = ""
     
-    var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
-    var customButtonColor = Color(#colorLiteral(red: 0.7182822824, green: 0.2634641826, blue: 0.6803607941, alpha: 1))
+    var customColor = Color(#colorLiteral(red: 0.5268374085, green: 0.8414849043, blue: 0.9457139373, alpha: 1))
+    var customButtonColor = Color(#colorLiteral(red: 0.8277178407, green: 0.3083713651, blue: 0.607052505, alpha: 1))
     @EnvironmentObject var session: SessionStore
     
     func signup() {
@@ -120,7 +120,7 @@ struct CreateAccountView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.white, customColor]),
+            LinearGradient(gradient: Gradient(colors: [customColor, Color.white]),
              startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea(.all)
             VStack {

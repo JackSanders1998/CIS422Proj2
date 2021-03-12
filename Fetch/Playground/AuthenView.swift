@@ -13,9 +13,9 @@ struct SignInView: View {
     @State var password = ""
     @State var error = ""
     @EnvironmentObject var session: SessionStore
-    var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
-    var titleColor = Color(#colorLiteral(red: 0.6689291596, green: 0.2796352208, blue: 0.6291314363, alpha: 1))
-    var customButtonColor = Color(#colorLiteral(red: 0.7638114691, green: 0.2832764089, blue: 0.7193431258, alpha: 1))
+    var customColor = Color(#colorLiteral(red: 0.5867831068, green: 0.8279801758, blue: 1, alpha: 1))
+    var titleColor = Color(#colorLiteral(red: 0.8277178407, green: 0.3083713651, blue: 0.607052505, alpha: 1))
+    var customButtonColor = Color(#colorLiteral(red: 0.8277178407, green: 0.3083713651, blue: 0.607052505, alpha: 1))
     
     func signIn() {
         session.signIn(email: email, password: password) { (result, error) in

@@ -7,7 +7,7 @@
 import SwiftUI
 import FirebaseDatabase
 import Firebase
-
+//import UIKit
 
 
 struct ProfileView: View {
@@ -29,8 +29,12 @@ struct ProfileView: View {
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: profileUIColor]
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
+
+    
     var body: some View {
         NavigationView {
+            
+            
             VStack {
                 VStack {
                     HStack {
@@ -111,14 +115,16 @@ struct ProfileView: View {
                             }
                             return result
                         }
-                        
+
                         let object: [String: NSString] =
                             ["Owner": "\(userSettings.name)" as NSString,
                              "Dogname": "\(userSettings.dogname)" as NSString,
                              "Breed": "\(userSettings.breed)" as NSString,
                              "Age": "\(userSettings.age)" as NSString,
                              "Weight": "\(userSettings.weight)" as NSString,
+                             "UID": "(currentUser)" as NSString
                             ]
+                        
                         database.child("Users").child("\(currentUser)").setValue(object)
     
 
@@ -133,6 +139,12 @@ struct ProfileView: View {
              .navigationBarItems(trailing: Button(action: session.signOut) {
                 Text("Sign out")
             })
+
+            HStack {
+                Divider()
+                Image(systemName: "2.circle")
+                Divider()
+            }.frame(height: 100)
             
         }
     }
