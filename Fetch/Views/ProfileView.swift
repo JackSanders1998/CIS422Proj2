@@ -9,125 +9,218 @@ import FirebaseDatabase
 import Firebase
 
 struct ProfileView: View {
+    private let database = Database.database().reference()
+    @EnvironmentObject var session: SessionStore
     @State var name = ""
     @State var email = ""
     @State var dogname = ""
+    @State var age = ""
+    @State var weight = ""
+    @State var activity = ""
     @State var userSettings = UserSettings()
     @State var isShown: Bool = false
     @State var image: Image?
     @State var sourceType: Int = 0
-    private let database = Database.database().reference()
-    @EnvironmentObject var session: SessionStore
     @State var showActionSheet: Bool = false
     @State private var selection = 0
-    var titleColor = Color(#colorLiteral(red: 0.7638114691, green: 0.2832764089, blue: 0.7193431258, alpha: 1))
+    var titleColor = Color(#colorLiteral(red: 0.6261639836, green: 0.2293635575, blue: 0.5936303033, alpha: 1))
     var backgroundColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
     var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
     var profileUIColor = UIColor(red: 0.75, green: 0.18, blue: 0.87, alpha: 1.00)
+    
     init() {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: profileUIColor]
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
+    
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(gradient: Gradient(colors: [Color.white]),
+                LinearGradient(gradient: Gradient(colors: [Color.white, customColor]),
                                startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea(.all)
-                VStack {
-                        image?
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 180, height: 180)
-                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                            .clipped()
-                            .overlay(CameraButton(showActionSheet: $showActionSheet)
-                                        .offset(x: 50, y: 65))
-                            
+                ScrollView {
+                    // STACK BELOW WILL INCLUDE PROFILE PICTURE AND BASIC INFORMATION TEXT FIELDS
                     VStack {
-                        HStack {
-                            Text("Name:").padding(.trailing, 20)
-                                .foregroundColor(.white)
-                                .padding(.all, 4)
-                            TextField("", text: $userSettings.name).foregroundColor(.white)
-                        }.padding()
-                        .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
-                        .cornerRadius(50)
-                        .opacity(0.9)
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
-                        .padding(.top, 15)
-                        
-                        HStack {
-                            Text("Dog Name:").padding(.trailing, 20)
-                                .foregroundColor(.white)
-                                .padding(.all, 4)
-                            TextField("", text: self.$userSettings.dogname).foregroundColor(.white)
-                        }.padding()
-                        .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
-                        .cornerRadius(50)
-                        .opacity(0.9)
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
-                        .padding(.top, 15)
-                        
-                        HStack {
-                            Text("Breed:").padding(.trailing, 20)
-                                .foregroundColor(.white)
-                                .padding(.all, 4)
-                            TextField("", text: self.$userSettings.breed).foregroundColor(.white)
-                        }.padding()
-                        .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
-                        .cornerRadius(50)
-                        .opacity(0.9)
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
-                        .padding(.top, 15)
-                        // Add User info to our database (Firebase)
-                        Button(action: {
-                            
-                            var currentUser: String {
-                                var result: String
-                                let temp = Auth.auth().currentUser
-                                if (temp?.email != nil) {
-                                    result = temp!.uid
-                                } else {
-                                    result = "nil"
-                                }
-                                return result
-                            }
-                            
-                            let object: [String: NSString] =
-                                ["Owner": userSettings.name as NSString,
-                                 "Dogname": userSettings.dogname as NSString,
-                                 "Breed": userSettings.breed as NSString]
-                            database.child("Users").child(currentUser).setValue(object)
-        
-
-                        }) {
-                            Text("update")
-                                .bold()
-                                .padding(.leading, 270)
+                            image?
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 180, height: 180)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                .clipped()
+                                .overlay(CameraButton(showActionSheet: $showActionSheet)
+                                            .offset(x: 50, y: 65))
+                        VStack {
+                            Text("Basic Info")
+                                .font(.system(size:20, weight: .bold))
+                                .padding(.top, 10)
+                                .padding(.trailing, 240)
                                 
-                                .foregroundColor(titleColor)
-                           }
-                    }
-
-                    Spacer()
-                }.actionSheet(isPresented: $showActionSheet, content: { () -> ActionSheet in
-                    ActionSheet(title: Text("Select Image"), message: Text("Please select an image or take one"),
-                                buttons: [ActionSheet.Button.default(Text("Camera"), action: {
-                                    self.sourceType = 0
-                                    self.isShown.toggle()
-                                }),
-                                ActionSheet.Button.default(Text("Photo Gallery"), action: {
-                                    self.sourceType = 1
-                                    self.isShown.toggle()
-                                }),
-                                ActionSheet.Button.cancel()
-                                ])
+                            HStack {
+                                Text("Name:").padding(.trailing, 20)
+                                    .foregroundColor(.white)
+                                    .padding(.all, 4)
+                                TextField("", text: $userSettings.name).foregroundColor(.white)
+                            }.padding()
+                            .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                            .cornerRadius(50)
+                            .opacity(0.9)
+                            .padding(.leading, 20)
+                            .padding(.trailing, 20)
+                            .padding(.top, 15)
+                            
+                            HStack {
+                                Text("Dog Name:").padding(.trailing, 20)
+                                    .foregroundColor(.white)
+                                    .padding(.all, 4)
+                                TextField("", text: self.$userSettings.dogname).foregroundColor(.white)
+                            }.padding()
+                            .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                            .cornerRadius(50)
+                            .opacity(0.9)
+                            .padding(.leading, 20)
+                            .padding(.trailing, 20)
+                            .padding(.top, 15)
+                            
+                            HStack {
+                                Text("Breed:").padding(.trailing, 20)
+                                    .foregroundColor(.white)
+                                    .padding(.all, 4)
+                                TextField("", text: self.$userSettings.breed).foregroundColor(.white)
+                            }.padding()
+                            .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                            .cornerRadius(50)
+                            .opacity(0.9)
+                            .padding(.leading, 20)
+                            .padding(.trailing, 20)
+                            .padding(.top, 15)
+                            // Add User info to our database (Firebase)
+//                            Button(action: {
+//                                var currentUser: String {
+//                                    var result: String
+//                                    let temp = Auth.auth().currentUser
+//                                    if (temp?.email != nil) {
+//                                        result = temp!.uid
+//                                    } else {
+//                                        result = "nil"
+//                                    }
+//                                    return result
+//                                }
+//
+//                                let object: [String: NSString] =
+//                                    ["Owner": userSettings.name as NSString,
+//                                     "Dogname": userSettings.dogname as NSString,
+//                                     "UID": currentUser as NSString,
+//                                     "Breed": userSettings.breed as NSString]
+//                                database.child("Users").child(currentUser).setValue(object)
+//
+//                            }) {
+//                                Text("update")
+//                                    .bold()
+//                                    .padding(.leading, 270)
+//
+//                                    .foregroundColor(titleColor)
+//                               }
+                        }
+                        // STACK BELOW WILL INCLUDE PET BIO
+                        VStack {
+                            Text("Pet Bio")
+                                .font(.system(size:20, weight: .bold))
+                                .padding(.top, 30)
+                                .padding(.trailing, 280)
+                                
+                            HStack {
+                                Text("Age:").padding(.trailing, 20)
+                                    .foregroundColor(.white)
+                                    .padding(.all, 4)
+                                TextField("", text: self.$userSettings.age).foregroundColor(.white)
+                            }.padding()
+                            .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                            .cornerRadius(50)
+                            .opacity(0.9)
+                            .padding(.leading, 20)
+                            .padding(.trailing, 20)
+                            .padding(.top, 15)
+                            
+                            HStack {
+                                Text("Weight:").padding(.trailing, 20)
+                                    .foregroundColor(.white)
+                                    .padding(.all, 4)
+                                TextField("", text: self.$userSettings.weight).foregroundColor(.white)
+                            }.padding()
+                            .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                            .cornerRadius(50)
+                            .opacity(0.9)
+                            .padding(.leading, 20)
+                            .padding(.trailing, 20)
+                            .padding(.top, 15)
+                            
+                            HStack {
+                                Text("Personality:").padding(.trailing, 20)
+                                    .foregroundColor(.white)
+                                    .padding(.all, 4)
+                                TextField("", text: self.$userSettings.personality).foregroundColor(.white)
+                            }.padding()
+                            .background(Color(#colorLiteral(red: 0.4693555236, green: 0.4665696621, blue: 0.4714997411, alpha: 1))).opacity(0.6)
+                            .cornerRadius(50)
+                            .opacity(0.9)
+                            .padding(.leading, 20)
+                            .padding(.trailing, 20)
+                            .padding(.top, 15)
+                            // Add User info to our database (Firebase)
+                            Button(action: {
+                                var currentUser: String {
+                                    var result: String
+                                    let temp = Auth.auth().currentUser
+                                    if (temp?.email != nil) {
+                                        result = temp!.uid
+                                    } else {
+                                        result = "nil"
+                                    }
+                                    return result
+                                }
+                                let newAge = NSInteger(userSettings.age)
+                                let newWeight = NSInteger(userSettings.weight)
+                                let object: [String: Any] =
+                                    ["Owner": userSettings.name as NSString,
+                                     "Dogname": userSettings.dogname as NSString,
+                                     "Age": (newAge ?? 0) as NSInteger,
+                                     "Weight": (newWeight ?? 0) as NSInteger,
+                                     "Personality": userSettings.personality as NSString,
+                                     "UID": currentUser as NSString,
+                                     "Breed": userSettings.breed as NSString]
+                                database.child("Users").child(currentUser).setValue(object)
+        
+                            }) {
+                                Text("update")
+                                    .fontWeight(.bold)
+                                    .padding(10)
+                                    .background(titleColor)
+                                    .cornerRadius(20)
+                                    .foregroundColor(.white)
+                                    .padding(5)
+                                    .padding(.top, 10)
+                                    .padding(.bottom, 10)
+                                    .padding(.leading, 280)
+                               }
+                        }
+                        Spacer()
+                        
+                    }.actionSheet(isPresented: $showActionSheet, content: { () -> ActionSheet in
+                        ActionSheet(title: Text("Select Image"), message: Text("Please select an image or take one"),
+                                    buttons: [ActionSheet.Button.default(Text("Camera"), action: {
+                                        self.sourceType = 0
+                                        self.isShown.toggle()
+                                    }),
+                                    ActionSheet.Button.default(Text("Photo Gallery"), action: {
+                                        self.sourceType = 1
+                                        self.isShown.toggle()
+                                    }),
+                                    ActionSheet.Button.cancel()
+                                    ])
                 })
+                }
                 if isShown {
                     imagePicker(isVisible: $isShown, image: $image, sourceType: sourceType)
                 }
@@ -162,10 +255,32 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(dogname, forKey: "dogname")
         }
     }
+    
+    @Published var age: String {
+        didSet {
+            UserDefaults.standard.set(age, forKey: "age")
+        }
+    }
+    
+    @Published var weight: String {
+        didSet {
+            UserDefaults.standard.set(weight, forKey: "weight")
+        }
+    }
+    
+    @Published var personality: String {
+        didSet {
+            UserDefaults.standard.set(personality, forKey: "personality")
+        }
+    }
+    
     init() {
         self.name = UserDefaults.standard.object(forKey: "name") as? String ?? ""
         self.breed = UserDefaults.standard.object(forKey: "breed") as? String ?? ""
         self.dogname = UserDefaults.standard.object(forKey: "dogname") as? String ?? ""
+        self.age = UserDefaults.standard.object(forKey: "age") as? String ?? ""
+        self.weight = UserDefaults.standard.object(forKey: "weight") as? String ?? ""
+        self.personality = UserDefaults.standard.object(forKey: "personality") as? String ?? ""
     }
 }
 
@@ -175,6 +290,7 @@ struct ProfileView_Previews: PreviewProvider {
     }
 }
 
+// struct below is just for the camera icon
 struct CameraButton: View {
     @Binding var showActionSheet: Bool
     
@@ -196,7 +312,7 @@ struct CameraButton: View {
     }
 }
 
-
+//struct below includes functionality for Camera and user library
 struct imagePicker: UIViewControllerRepresentable {
     @Binding var isVisible: Bool
     @Binding var image: Image?
@@ -214,6 +330,7 @@ struct imagePicker: UIViewControllerRepresentable {
 
         return vc
     }
+    
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
 
     }

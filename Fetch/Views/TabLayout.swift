@@ -12,7 +12,6 @@ struct TabLayout: View {
     @State var targetTab = ""
     var body: some View {
         TabView(selection: $targetTab) {
-//            ProfileView()
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")

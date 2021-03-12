@@ -223,7 +223,6 @@
 				E377356025F7090E00A7F821 /* ContentView.swift */,
 				E3BA6F1325F840A800F81F86 /* Authentication.swift */,
 				E31BC98625FACC3700C3D16B /* ProfilePage.swift */,
-				E31022B125FA77B7001C2CD9 /* testingDB.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +238,7 @@
 		E3812E9025F857BE0078771A /* Playground */ = {
 			isa = PBXGroup;
 			children = (
+				E31022B125FA77B7001C2CD9 /* testingDB.swift */,
 				E34CC86325F02F2100F1EEEE /* LoginView.swift */,
 				E326534B25F070C000A9222C /* SettingView.swift */,
 				E3C4302125F1C681002AC018 /* SignupView.swift */,
