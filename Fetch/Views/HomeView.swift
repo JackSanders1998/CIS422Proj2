@@ -346,6 +346,7 @@ struct HomeView: View {
                     VStack{
                         VStack {
                             Spacer()
+                            deckPicture()
                             Text(self.temp)
                             Text(self.temp1)
                             Text(self.temp2)
@@ -417,6 +418,54 @@ struct HomeView: View {
                     }
                 }
             }
+    }
+}
+
+struct deckPicture: View {
+    var cardColor = Color(#colorLiteral(red: 0.512927413, green: 0.6070608497, blue: 0.657833159, alpha: 1))
+    var body: some View {
+        VStack {
+            Button(action: {
+                print("temporary")
+                }) {
+                RoundedRectangle(cornerRadius: 25)
+                    .opacity(0.3)
+                    .frame(width: 390, height: 480, alignment: .center)
+                    .foregroundColor(cardColor)
+                    .overlay(RoundedRectangle(cornerRadius: 30)
+                        .frame(width: 36, height: 36, alignment: .center)
+                        .foregroundColor(Color.init(red: 232/255, green: 233/255, blue: 231/255))
+                        .overlay(Image("snow")
+                            .resizable()
+                            .scaledToFit()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 400.0, height: 400.0, alignment: .top)
+                                    .padding(.bottom, 80)
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: 380, height: 300)
+//                        .foregroundColor(.black)
+                        )
+                    )
+                    .overlay(Text("Luna, 4")
+                                .foregroundColor(.black)
+                                .bold()
+                                .frame(width: 130, height: 50)
+//                                .background(Color.black)
+                                .padding(.top, 370)
+                                .padding(.leading, 50)
+                                .padding(.trailing, 300)
+                                .font(.system(size: 35))
+                                
+                                )
+                                
+            }
+//            Text("Luna")
+//                .bold()
+//                .padding(.top, 5)
+//                .padding(.trailing, 300)
+//                .font(.system(size: 35))
+        }
     }
 }
 

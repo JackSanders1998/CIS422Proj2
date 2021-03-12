@@ -257,7 +257,7 @@ class UserSettings: ObservableObject {
         self.personality = UserDefaults.standard.object(forKey: "personality") as? String ?? ""
     }
 }
-
+// Struct is just to preview current page in Xcode
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView().environmentObject(SessionStore())
