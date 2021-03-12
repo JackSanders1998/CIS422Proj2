@@ -21,4 +21,11 @@ After downloading XCode, open terminal and run:
 `sudo gem install cocoapods`
 
 Then: 
+<<<<<<< Updated upstream
 `git pull "https://github.com/JackSanders1998/CIS422Proj2/tree/main/Fetch" `
+=======
+`git pull "https://github.com/JackSanders1998/CIS422Proj2/tree/main/Fetch" `
+
+Then:  
+`open ~/Fetch/fetch.xcworkspace`
+>>>>>>> Stashed changes
