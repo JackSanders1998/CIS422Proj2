@@ -16,7 +16,7 @@ struct DeckView: View {
     @State public var owner: String = "nil"
     @State public var dogname: String = "nil"
     @State public var breed: String = "nil"
-    @State public var img: Image = "nil"
+//    @State public var img: Image = None
     @State public var uid: String = "nil"
     
     @State public var curr_owner: String = ""
@@ -61,7 +61,11 @@ struct DeckView: View {
     }
     
     let database = Database.database().reference()
-    let storage = Storage.storage(url:"gs://fetch-app-b86d8.appspot.com/")
+//    let storage = Storage.storage(url:"gs://fetch-app-b86d8.appspot.com/")
+    let storage = Storage.storage()
+    let storageRef = Storage.storage().reference()
+
+//    let storageRef = storage.reference()
     
     func match(){
 
@@ -136,6 +140,22 @@ struct DeckView: View {
 //        let user_img = Database.database().reference().child("1024.png")
 //        let pathReference = storage.reference(withPath: "ProfilePictures/1024.png")
 //        let imageView: UIImageView = self.imageView
+        let imagesRef = storageRef.child("ProfilePictures")
+        var spaceRef = storageRef.child("ProfilePictures/1024.png")
+        let storagePath = "\("fetch-app-b86d8.appspot.com")/ProfilePictures/1024.png"
+        spaceRef = storage.reference(forURL: storagePath)
+        let rootRef = spaceRef.root()
+        let profileRef = storageRef.child("ProfilePictures/1024.png")
+        
+        profileRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            print(error)
+          } else {
+            // Data for "images/island.jpg" is returned
+            let image = UIImage(data: data!)
+            print(image)
+          }
+        }
         dis_user_ref.observe(.value, with: {snapshot in
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 let userDict = child.value as! [String: Any]
@@ -154,6 +174,7 @@ struct DeckView: View {
                 }
                 
                 else {
+                    
                     print("Owner = \(owner)")
                     print("Dog's name = \(dogname)")
                     print("Breed = \(breed)")
