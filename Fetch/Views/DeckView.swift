@@ -3,6 +3,7 @@
 //  Fetch
 //
 //  Created by Ronny on 3/3/21.
+//  EDITED BY KYRA AND CALLISTA 03/11
 //
 
 import SwiftUI
@@ -24,10 +25,13 @@ struct DeckView: View {
     @State public var userarray = [""]
     @State public var breedarray = [""]
     @State public var dognamearray = [""]
-    @State var temp = "Press update to start viewing dogs"
+    
+    @State var temp = ""
     @State var temp1 = ""
     @State var temp2 = ""
     @State var count: Int = 0
+    
+    @State public var more: String = "Show me some dogs!"
     
     //Figuring out who the current user is
     var currentUser: String {
@@ -65,7 +69,7 @@ struct DeckView: View {
             self.temp2 = breedarray[count]
         }
         else if count+1 <= userarray.count {
-            database.child("Matches").child("\(currentUser)").child("\(dognamearray[count])").setValue("\(dognamearray[count])")
+            database.child("Matches").child("\(currentUser)").child("\(count)").setValue("\(dognamearray[count])")
             
             print("count = \(count)")
             print("User: \(userarray[count])")
@@ -99,7 +103,7 @@ struct DeckView: View {
             self.temp2 = breedarray[count]
         }
         else if count+1 <= userarray.count {
-            database.child("Declines").child("\(currentUser)").child("\(dognamearray[count])").setValue("\(dognamearray[count])")
+            database.child("Declines").child("\(currentUser)").child("\(count)").setValue("\(dognamearray[count])")
             
             print("count = \(count)")
             print("User: \(userarray[count])")
@@ -159,17 +163,32 @@ struct DeckView: View {
         NavigationView {
             VStack {
                 VStack {
+                    /*
                     VStack {
                         Text(self.temp)
                         Text(self.temp1)
                         Text(self.temp2)
                     }
+                    */
                     Button(action: {
                         display_profile()
+                        more = "More dogs please!"
+                        let secondsToDelay = 0.7
+                        DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
+                            if count == 0 {
+                                count += 1
+                            }
+                            self.temp = userarray[count]
+                            self.temp1 = dognamearray[count]
+                            self.temp2 = breedarray[count]
+                        }
                     }){
-                        Text("update")
+                        Text(more)
                             .padding(.leading, 270)
                     }.offset(x: -140, y: 330)
+                    Text(self.temp)
+                    Text(self.temp1)
+                    Text(self.temp2)
                     Button(action: {
                             match()
                     }) {
