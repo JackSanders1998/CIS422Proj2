@@ -58,7 +58,11 @@ This should open the workspace file in Xcode.
 --------------
 
 Ronny Fuentes <ronnyf@uregon.edu>
+
 Kyra Novitzky 
+
 Jack Sanders <jsanders5@uoregon.edu>
+
 Stephanie Schofield <sschofie@uoregon.edu>
+
 Callista West <Cwest10@uoregon.edu>
