@@ -23,6 +23,7 @@ Once you download and open the Fetch app, you will be directed a Welcome page to
 
 ## Logging In:
 
+After you create an account, you will be asked to login using those same credentials. If you do not enter the correct email or password, then you will receive an error message. Once you enter the correct information, you will be directed to a profile page to enter your dog's information. 
 
 <img src="https://github.com/JackSanders1998/CIS422Proj2/blob/main/docs/mockup_images/sign_in.png" width="300" />
 
