@@ -31,3 +31,7 @@ The profile is initially visited if a new user has just created an account. Befo
 
 The Deck is the core functionality that allows for Fetch to create matches for various users. The operation can be visualized similar to a deck of cards that are all facing up. A user will go through each card, or in this case dog profile, 1 by 1 and determine whether they think this owner and pup will make a good fit for a future playdate. Once a user has made a decision on a profile by accepting or declining, that profile will leave the deck and enter one of two database entities: Matched and Declined..
 
+### Homepage
+
+While the Deck module holds the functionality for how profiles will be moved into a specified user’s discard piles, the Homepage’s role is simply a way for Fetch to display the profiles remaining in the Deck and allow for users to interact with new profiles. It will display profiles 1 by 1, the red “X” and green “♥” buttons, the middle arrow button to populate the deck, and the tab bar. After pressing the arrow button, the deck will be populated and will begin to display the user’s profiles including the user’s name, their dog’s name, and their dog’s breed.
+
