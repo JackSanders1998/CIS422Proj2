@@ -65,7 +65,7 @@ This should open the workspace file in Xcode.
 
 
 # Contributors
---------------  
+
 Ronny Fuentes <ronnyf@uregon.edu>  
 Kyra Novitzky <knovitzk@uoregon.edu>  
 Jack Sanders <jsanders5@uoregon.edu>  
