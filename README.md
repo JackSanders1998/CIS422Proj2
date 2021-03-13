@@ -50,15 +50,12 @@ Pull the repo:
 "git pull "https://github.com/JackSanders1998/CIS422Proj2/tree/main/Fetch"
 ```
 
-After the Fetch project is pulled, and CocoaPods is installed, open `terminal` and navigate to where the `Fetch` folder is located. Go into the Fetch folder and run:
-```
-pod repo update
-```
+After the Fetch project is pulled, and CocoaPods is installed, open `terminal` and navigate to where the `Fetch` folder is located. Go into the Fetch folder and run:  
+`pod repo update`
 
-Within the same directory run:
-```
-open Fetch.xcworkspace
-```
+
+Within the same directory run:  
+`open Fetch.xcworkspace`
 
 This should open the workspace file in Xcode. 
 
@@ -68,8 +65,7 @@ This should open the workspace file in Xcode.
 
 
 # Contributors
---------------
-
+--------------  
 Ronny Fuentes <ronnyf@uregon.edu>  
 Kyra Novitzky <knovitzk@uoregon.edu>  
 Jack Sanders <jsanders5@uoregon.edu>  
