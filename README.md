@@ -7,7 +7,7 @@ CIS 422 @ University of Oregon
 Fetch Team  
 Ronny Fuentes, Kyra Novitzky, Jack Sanders, Stephanie Schofield, Callista West  
 
-Last modified March 11, 2021
+Last modified March 12, 2021
 
 ## Installation Instructions:
 
