@@ -10,7 +10,7 @@ Last Modified March 12, 2021
 
 ## Setup
 
-Please follow the [setup instructions](https://github.com/JackSanders1998/CIS422Proj2/install.md) for developers.
+Please follow the [setup instructions](https://github.com/JackSanders1998/CIS422Proj2/edit/main/docs/Install.md) for developers.
 
 ## A high level overview
 
