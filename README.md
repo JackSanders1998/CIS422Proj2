@@ -1,10 +1,11 @@
-# CIS422Proj2
-
 # Fetch: The Tinder for Doggy Playdates
 
 
 The purpose of this app is to act as the Tinder for doggy playdates. Owners will download Fetch, make a profile, and from there, go through various doggy profiles to find the perfect match for their own beloved pup to play with, whenever and wherever.
-Matches are determined by attributes supplied in the user profile page, (i.e. Dog name, breed, age, etc).
+
+
+Owners can describe their pet’s attributes like name, breed, birthday, sex, whether they are spayed or neutered, and size. Owners swipe through a deck to confirm or reject a dog to receive matches. After matching with another dog, the owner can contact their match to set up a playdate.a
+
 
 # Authors:
 
@@ -13,6 +14,18 @@ Team: Fetch
 Ronny Fuentes, Kyra Novitzky, Jack Sanders, Stephanie Schofield, Callista West  
 
 Last Modified March 12, 2021
+
+
+
+## Technologies
+
+
+* Swift/SwiftUI
+
+* FireBase
+
+* UIKit 
+
 
 
 ## Requirements
