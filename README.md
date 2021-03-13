@@ -7,6 +7,10 @@ The purpose of this app is to act as the Tinder for doggy playdates. Owners will
 Owners can describe their pet’s attributes like name, breed, birthday, sex, whether they are spayed or neutered, and size. Owners swipe through a deck to confirm or reject a dog to receive matches. After matching with another dog, the owner can contact their match to set up a playdate.
 
 
+NOTE: The camera functionality within the profile page works. However, in order to view the functionality, you must test it within an actual iphone rather than the simulator. 
+
+
+
 # Authors:
 
 CIS 422 @ University of Oregon  

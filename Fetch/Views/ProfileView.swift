@@ -29,6 +29,7 @@ struct ProfileView: View {
     var customColor = Color(#colorLiteral(red: 0, green: 0.5166278481, blue: 0.5898452401, alpha: 1))
     var profileUIColor = UIColor(red: 0.75, green: 0.18, blue: 0.87, alpha: 1.00)
     
+    // This init function is used JUST to change the color of the navigation title
     init() {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: profileUIColor]
@@ -70,7 +71,7 @@ struct ProfileView: View {
                             .padding(.leading, 20)
                             .padding(.trailing, 20)
                             .padding(.top, 15)
-                            
+                            // Dog Name text field
                             HStack {
                                 Text("Dog Name:").padding(.trailing, 20)
                                     .foregroundColor(.white)
@@ -83,7 +84,7 @@ struct ProfileView: View {
                             .padding(.leading, 20)
                             .padding(.trailing, 20)
                             .padding(.top, 15)
-                            
+                            // Breed text field
                             HStack {
                                 Text("Breed:").padding(.trailing, 20)
                                     .foregroundColor(.white)
@@ -105,7 +106,7 @@ struct ProfileView: View {
                                 .font(.system(size:20, weight: .bold))
                                 .padding(.top, 30)
                                 .padding(.trailing, 280)
-                                
+                            // Age text field
                             HStack {
                                 Text("Age:").padding(.trailing, 20)
                                     .foregroundColor(.white)
@@ -118,7 +119,7 @@ struct ProfileView: View {
                             .padding(.leading, 20)
                             .padding(.trailing, 20)
                             .padding(.top, 15)
-                            
+                            // Weight text field
                             HStack {
                                 Text("Weight:").padding(.trailing, 20)
                                     .foregroundColor(.white)
@@ -131,7 +132,7 @@ struct ProfileView: View {
                             .padding(.leading, 20)
                             .padding(.trailing, 20)
                             .padding(.top, 15)
-                            
+                            // Personality text field
                             HStack {
                                 Text("Personality:").padding(.trailing, 20)
                                     .foregroundColor(.white)
