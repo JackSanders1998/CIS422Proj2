@@ -14,3 +14,11 @@ Last modified March 12, 2021
 
 To get started, follow these [installation instructions](https://github.com/JackSanders1998/CIS422Proj2/blob/main/README.md).    
 
+## Account Creation:
+![Account creation](https://github.com/JackSanders1998/CIS422Proj2/blob/main/mockup_images/account_creation.png)
+
+## Logging In:
+
+## Swiping through the Deck:
+
+## Viewing Matches:
