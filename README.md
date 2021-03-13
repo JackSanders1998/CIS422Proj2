@@ -63,23 +63,15 @@ open Fetch.xcworkspace
 This should open the workspace file in Xcode. 
 
 
-How to run our app: 
-```
-Xcode
-Product
-Run
-```
+#### Running The Simulator  
+`XCode > Product > Run`
+
 
 # Contributors
 --------------
 
-Ronny Fuentes <ronnyf@uregon.edu>
-
-Kyra Novitzky <knovitzk@uoregon.edu> 
-
-Jack Sanders <jsanders5@uoregon.edu>
-
-Stephanie Schofield <sschofie@uoregon.edu>
-
-Callista West <Cwest10@uoregon.edu>
-
+Ronny Fuentes <ronnyf@uregon.edu>  
+Kyra Novitzky <knovitzk@uoregon.edu>  
+Jack Sanders <jsanders5@uoregon.edu>  
+Stephanie Schofield <sschofie@uoregon.edu>  
+Callista West <Cwest10@uoregon.edu>  
