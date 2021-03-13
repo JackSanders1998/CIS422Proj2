@@ -7,16 +7,63 @@
 //
 
 import SwiftUI
+import Combine
 import FirebaseStorage
 import Firebase
 import FirebaseDatabase
 import Foundation
 
+//final class Loader : ObservableObject {
+//    let didChange = PassthroughSubject<Data?, Never>()
+//    var data: Data? = nil {
+//        didSet { didChange.send(data) }
+//    }
+//
+//    init(_ id: String){
+//        let url = "images/thumb-sm@\(id)"
+//        let storage = Storage.storage()
+//        let ref = storage.reference().child(url)
+//        ref.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//            if let error = error {
+//                print("\(error)")
+//            }
+//
+//            DispatchQueue.main.async {
+//                self.data = data
+//            }
+//        }
+//    }
+//}
+//
+//
+//
+//let placeholder = UIImage(named: "placeholder.jpg")!
+//
+//struct FirebaseImage : View {
+//
+//    init(id: String) {
+//        self.imageLoader = Loader(id)
+//    }
+//
+//    @ObjectObserve private var imageLoader : Loader
+//
+//    var image: UIImage? {
+//        imageLoader.data.flatMap(UIImage.init)
+//    }
+//
+//    var body: some View {
+//        Image(uiImage: image ?? placeholder)
+//            .resizable()
+//            .aspectRatio(contentMode: .fill)
+//
+//    }
+//}
+
 struct DeckView: View {
     @State public var owner: String = "nil"
     @State public var dogname: String = "nil"
     @State public var breed: String = "nil"
-//    @State public var img: Image = None
+    @State public var profile_picture: UIImage? = nil
     @State public var uid: String = "nil"
     
     @State public var curr_owner: String = ""
@@ -32,6 +79,8 @@ struct DeckView: View {
     @State var temp1 = ""
     @State var temp2 = ""
     @State var count: Int = 0
+    @State var imageView = ""
+
     
     @State public var more: String = "Show me some dogs!"
     
@@ -137,23 +186,25 @@ struct DeckView: View {
     //var count = 0
     func display_profile(){
         let dis_user_ref = Database.database().reference().child("Users")
-//        let user_img = Database.database().reference().child("1024.png")
-//        let pathReference = storage.reference(withPath: "ProfilePictures/1024.png")
-//        let imageView: UIImageView = self.imageView
-        let imagesRef = storageRef.child("ProfilePictures")
+
+        
+        
+//        let imagesRef = storageRef.child("ProfilePictures")
         var spaceRef = storageRef.child("ProfilePictures/1024.png")
-        let storagePath = "\("fetch-app-b86d8.appspot.com")/ProfilePictures/1024.png"
+        let storagePath = "\("gs://fetch-app-b86d8.appspot.com/")/ProfilePictures/1024.png"
         spaceRef = storage.reference(forURL: storagePath)
         let rootRef = spaceRef.root()
-        let profileRef = storageRef.child("ProfilePictures/1024.png")
         
+        let profileRef = storageRef.child("ProfilePictures/1024.png")
         profileRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
           if let error = error {
             print(error)
           } else {
-            // Data for "images/island.jpg" is returned
-            let image = UIImage(data: data!)
-            print(image)
+            profile_picture = UIImage(data: data!)
+            print("data data:")
+            print(data)
+            print("profile picture data:")
+            print(profile_picture)
           }
         }
         dis_user_ref.observe(.value, with: {snapshot in
@@ -174,7 +225,6 @@ struct DeckView: View {
                 }
                 
                 else {
-                    
                     print("Owner = \(owner)")
                     print("Dog's name = \(dogname)")
                     print("Breed = \(breed)")
@@ -212,9 +262,18 @@ struct DeckView: View {
                             self.temp2 = breedarray[count]
                         }
                     }){
+                    
+
                         Text(more)
                             .padding(.leading, 270)
                     }.offset(x: -140, y: 330)
+
+                    if let image = profile_picture{
+                        Text("image has been set")
+                    }else{
+                        Text("image has not been set")
+                    }
+
                     Text(self.temp)
                     Text(self.temp1)
                     Text(self.temp2)
