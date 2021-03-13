@@ -89,6 +89,10 @@ run: open Fetch.xcworkspace
 `XCode > Product > Run`
 
 
+If any issues occur while running the application, please contact <ronnyf@uoregon.edu>. 
+
+
+ 
 # Contributors
 
 Ronny Fuentes <ronnyf@uregon.edu>  
