@@ -4,6 +4,15 @@
 
 
 The purpose of this app is to act as the Tinder for doggy playdates. Owners will download Fetch, make a profile, and from there, go through various doggy profiles to find the perfect match for their own beloved pup to play with, whenever and wherever.
+Matches are determined by attributes supplied in the user profile page, (i.e. Dog name, breed, age, etc).
+
+# Authors:
+
+CIS 422 @ University of Oregon
+Fetch Team
+Ronny, Kyra Novitzky, Jack Sanders, Stephanie Schofield, Callista West
+
+Last Modified March 12, 2021
 
 
 ## Requirements
@@ -54,15 +63,23 @@ open Fetch.xcworkspace
 This should open the workspace file in Xcode. 
 
 
+How to run our app: 
+```
+Xcode
+Product
+Run
+```
+
 # Contributors
 --------------
 
 Ronny Fuentes <ronnyf@uregon.edu>
 
-Kyra Novitzky 
+Kyra Novitzky <knovitzk@uoregon.edu> 
 
 Jack Sanders <jsanders5@uoregon.edu>
 
 Stephanie Schofield <sschofie@uoregon.edu>
 
 Callista West <Cwest10@uoregon.edu>
+
