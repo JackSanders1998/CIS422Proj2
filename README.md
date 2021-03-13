@@ -6,8 +6,7 @@
 The purpose of this app is to act as the Tinder for doggy playdates. Owners will download Fetch, make a profile, and from there, go through various doggy profiles to find the perfect match for their own beloved pup to play with, whenever and wherever.
 
 
-### Requirements
-----------------
+## Requirements
 
 
 * Xcode 12.4
@@ -15,12 +14,10 @@ The purpose of this app is to act as the Tinder for doggy playdates. Owners will
 * iOS 14.4+
 
 
-### Installation
-----------------
+## Installation
 
 
-#### CocoaPods
---------------
+##### CocoaPods
 
 
 The Fetch project relies on dependencies through a Podfile. Therefore, CocoaPods must be installed on your local machine, which can be found at [CocoaPods](https://cocoapods.org). 
