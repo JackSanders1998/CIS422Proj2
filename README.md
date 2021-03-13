@@ -8,7 +8,7 @@ Matches are determined by attributes supplied in the user profile page, (i.e. Do
 
 # Authors:
 
-CIS 422 @ University of Oregon
+CIS 422 @ University of Oregon  
 Team: Fetch   
 Ronny Fuentes, Kyra Novitzky, Jack Sanders, Stephanie Schofield, Callista West  
 
