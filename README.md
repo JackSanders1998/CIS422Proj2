@@ -24,6 +24,12 @@ The purpose of this app is to act as the Tinder for doggy playdates. Owners will
 This environment must be installed in order to run Fetch. The download can be found at [Xcode 12](https://developer.apple.com/xcode/)
 
 
+#### iOS 14.4+
+
+
+This application has not yet been deployed, but devices must be on version 14.4+ at the minimum in order to run this app.
+
+
 #### CocoaPods
 
 
