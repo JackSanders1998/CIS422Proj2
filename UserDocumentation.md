@@ -16,9 +16,14 @@ Last modified March 12, 2021
 To get started, follow these [installation instructions](https://github.com/JackSanders1998/CIS422Proj2/blob/main/README.md).    
 
 ## Account Creation:
+
+Once you download and open the Fetch app, you will be directed a Welcome page to create an account. Here you can enter your email address and a valid password longer than six characters. If the password is shorter than six characters, you will see an error message. 
+
 <img src="https://github.com/JackSanders1998/CIS422Proj2/blob/main/docs/mockup_images/account_creation.png" width="300" />
 
 ## Logging In:
+
+
 <img src="https://github.com/JackSanders1998/CIS422Proj2/blob/main/docs/mockup_images/sign_in.png" width="300" />
 
 ## Profile Page:
