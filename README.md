@@ -10,7 +10,16 @@ Matches are determined by attributes supplied in the user profile page, (i.e. Do
 
 CIS 422 @ University of Oregon
 Fetch Team
-Ronny, Kyra Novitzky, Jack Sanders, Stephanie Schofield, Callista West
+
+Ronny Fuentes 
+
+Kyra Novitzky
+
+Jack Sanders
+
+Stephanie Schofield 
+
+Callista West
 
 Last Modified March 12, 2021
 
