@@ -18,7 +18,13 @@ To get started, follow these [installation instructions](https://github.com/Jack
 <img src="https://github.com/JackSanders1998/CIS422Proj2/blob/main/mockup_images/account_creation.png" width="300" />
 
 ## Logging In:
+<img src="https://github.com/JackSanders1998/CIS422Proj2/blob/main/mockup_images/sign_in.png" width="300" />
+
+## Profile Page:
+<img src="https://github.com/JackSanders1998/CIS422Proj2/blob/main/mockup_images/profile_page.png" width="300" />
 
 ## Swiping through the Deck:
+<img src="https://github.com/JackSanders1998/CIS422Proj2/blob/main/mockup_images/deck_image_luna.png" width="300" />
 
 ## Viewing Matches:
+<img src="https://github.com/JackSanders1998/CIS422Proj2/blob/main/mockup_images/view_matches.png" width="300" />
