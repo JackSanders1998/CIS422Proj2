@@ -13,11 +13,18 @@ The purpose of this app is to act as the Tinder for doggy playdates. Owners will
 
 * iOS 14.4+
 
+* CocoaPods
 
 ## Installation
 
 
-##### CocoaPods
+#### Xcode 12.4 (mac)
+
+
+This environment must be installed in order to run Fetch. The download can be found at [Xcode 12](https://developer.apple.com/xcode/)
+
+
+#### CocoaPods
 
 
 The Fetch project relies on dependencies through a Podfile. Therefore, CocoaPods must be installed on your local machine, which can be found at [CocoaPods](https://cocoapods.org). 
