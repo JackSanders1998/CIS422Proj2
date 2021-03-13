@@ -15,7 +15,7 @@ Last modified March 12, 2021
 To get started, follow these [installation instructions](https://github.com/JackSanders1998/CIS422Proj2/blob/main/README.md).    
 
 ## Account Creation:
-<img src="https://github.com/JackSanders1998/CIS422Proj2/blob/main/mockup_images/account_creation.png" width="200" />
+<img src="https://github.com/JackSanders1998/CIS422Proj2/blob/main/mockup_images/account_creation.png" width="300" />
 
 ## Logging In:
 
