@@ -28,4 +28,9 @@ After the Fetch project is pulled, and CocoaPods is installed, open `terminal` a
 pod repo update
 ```
 
-Within the same directory, run `open Fetch.xcworkspace`
+Within the same directory run:
+```
+open Fetch.xcworkspace
+```
+
+This should open the workspace file in Xcode. 
