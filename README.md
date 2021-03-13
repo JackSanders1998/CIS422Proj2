@@ -9,17 +9,17 @@ Matches are determined by attributes supplied in the user profile page, (i.e. Do
 # Authors:
 
 CIS 422 @ University of Oregon
-Fetch Team
+Fetch Team  
 
-Ronny Fuentes 
+Ronny Fuentes     
 
-Kyra Novitzky
+Kyra Novitzky     
 
-Jack Sanders
+Jack Sanders    
 
-Stephanie Schofield 
+Stephanie Schofield       
 
-Callista West
+Callista West    
 
 Last Modified March 12, 2021
 
